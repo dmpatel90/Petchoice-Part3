@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<div class="search-section">
+  <% if (req && req.query.added) { %>
+    <div style="background:#e8f5e9;color:#2e7d32;padding:15px 20px;border-radius:10px;margin-bottom:20px;font-weight:bold;">
+      ✅ New breed added successfully!
+    </div>
+  <% } %>
+  <% if (req && req.query.deleted) { %>
+    <div style="background:#fff3e8;color:#e65100;padding:15px 20px;border-radius:10px;margin-bottom:20px;font-weight:bold;">
+      🗑️ "<%= req.query.deleted %>" has been deleted.
+    </div>
+  <% } %>
+  <% if (req && req.query.updated) { %>
+    <div style="background:#e3f2fd;color:#1565c0;padding:15px 20px;border-radius:10px;margin-bottom:20px;font-weight:bold;">
+      ✏️ Breed updated successfully!
+    </div>
+  <% } %>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;flex-wrap:wrap;gap:12px;">
+    <h2 style="font-size:28px;">All Cat Breeds <span style="font-size:16px;background:#ff914d;color:#fff;padding:4px 12px;border-radius:20px;margin-left:10px;"><%= breeds.length %> breeds</span></h2>
+    <a href="/breeds/add" class="btn">+ Add New Breed</a>
+  </div>
+
+  <div id="catsContainer">
+    <% breeds.forEach(function(breed) { %>
+    <div class="card">
+      <img
+        src="<%= breed.image_url || 'https://via.placeholder.com/400x250?text=' + encodeURIComponent(breed.name) %>"
+        alt="<%= breed.name %>"
+        onerror="this.src='https://via.placeholder.com/400x250?text=<%= encodeURIComponent(breed.name) %>'"
+      />
+      <div class="card-content">
+        <h3><%= breed.name %></h3>
+        <p><strong>Origin:</strong> <%= breed.origin %></p>
+        <p><strong>Lifespan:</strong> <%= breed.lifespan || 'N/A' %></p>
+        <p><strong>Grooming:</strong> <%= breed.grooming_level || 'N/A' %></p>
+        <p><%= breed.description ? breed.description.substring(0, 100) + '...' : '' %></p>
+        <div style="margin-top:15px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="/breeds/<%= breed.breed_id %>" class="btn" style="padding:8px 16px;font-size:14px;">View</a>
+          <a href="/breeds/<%= breed.breed_id %>/edit" class="btn" style="padding:8px 16px;font-size:14px;background:#333;">Edit</a>
+          <form method="POST" action="/breeds/<%= breed.breed_id %>/delete" style="display:inline;" onsubmit="return confirm('Delete <%= breed.name %>? This cannot be undone.')">
+            <button type="submit" style="padding:8px 16px;font-size:14px;background:#e53935;color:#fff;border:none;border-radius:8px;cursor:pointer;">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

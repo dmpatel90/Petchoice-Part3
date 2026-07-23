@@ -1,0 +1,1273 @@
+[
+  {"id":"breed-001","name":"Abyssinian","origin":"Ethiopia","temperament":"Active, Energetic, Independent, Intelligent, Gentle","description":"The Abyssinian is easy to care for, and a joy to have in your home. They're affectionate cats and love both people and other animals.","image_url":"https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg","details":{"lifespan":"14 - 15 years","weight":"7 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","energetic","intelligent","gentle"]},
+  {"id":"breed-002","name":"Aegean","origin":"Greece","temperament":"Affectionate, Social, Intelligent, Playful, Active","description":"Native to the Cycladic Islands of Greece, the Aegean is considered a natural breed. They are an active, social cat that loves people.","image_url":"https://cdn2.thecatapi.com/images/ozEvzdVM-.jpg","details":{"lifespan":"9 - 12 years","weight":"7 - 10 lbs","coatType":"Semi-Long","groomingLevel":"Medium"},"tags":["affectionate","social","playful","active"]},
+  {"id":"breed-003","name":"American Bobtail","origin":"United States","temperament":"Intelligent, Interactive, Lively, Playful, Sensitive","description":"The American Bobtail is an uncommon breed of domestic cat which was developed in the late 1960s. It is best known for its distinctive stubby tail.","image_url":"https://cdn2.thecatapi.com/images/hBXicehMA.jpg","details":{"lifespan":"11 - 15 years","weight":"7 - 16 lbs","coatType":"Medium/Long","groomingLevel":"Medium"},"tags":["intelligent","lively","playful","sensitive"]},
+  {"id":"breed-004","name":"American Curl","origin":"United States","temperament":"Affectionate, Curious, Intelligent, Interactive, Lively, Playful, Social","description":"The American Curl is a breed of cat characterized by its unusual ears, which curl back from the face toward the center of the back of the skull.","image_url":"https://cdn2.thecatapi.com/images/xnsqonbjW.jpg","details":{"lifespan":"12 - 16 years","weight":"5 - 10 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["affectionate","curious","intelligent","social"]},
+  {"id":"breed-005","name":"American Shorthair","origin":"United States","temperament":"Active, Curious, Easy Going, Playful, Calm","description":"The American Shorthair is a versatile and adaptable breed known for being gentle and easy-going. They make wonderful family pets.","image_url":"https://cdn2.thecatapi.com/images/JFPROfGtQ.jpg","details":{"lifespan":"15 - 17 years","weight":"8 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","curious","easygoing","calm"]},
+  {"id":"breed-006","name":"American Wirehair","origin":"United States","temperament":"Affectionate, Curious, Gentle, Intelligent, Reserved","description":"The American Wirehair is a spontaneous mutation of the American Shorthair. Their dense, springy, wiry coat is their most distinctive feature.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/American%20Wirehair%20Cat%203.jpg","details":{"lifespan":"14 - 18 years","weight":"8 - 15 lbs","coatType":"Wiry","groomingLevel":"Low"},"tags":["affectionate","gentle","intelligent","reserved"]},
+  {"id":"breed-007","name":"Balinese","origin":"United States","temperament":"Affectionate, Intelligent, Playful, Social","description":"The Balinese is a long-haired breed of domestic cat with Siamese-style point coloration and sapphire-blue eyes. They are very social and loving.","image_url":"https://cdn2.thecatapi.com/images/13MkvUreZ.jpg","details":{"lifespan":"10 - 15 years","weight":"8 - 15 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["affectionate","intelligent","playful","social"]},
+  {"id":"breed-008","name":"Bambino","origin":"United States","temperament":"Affectionate, Lively, Friendly, Playful","description":"The Bambino is a breed that was created as a cross between the Sphynx and the Munchkin. They are characterized by short legs and a hairless coat.","image_url":"https://www.thesprucepets.com/thmb/F9y0MYWzwg_8y0mcd0XlcOxwUNU=/2121x0/filters:no_upscale():strip_icc()/peterpancakeGettyImages-638917674-ee473ffc1c3d4b65a568f9b4c1a4506b.jpg","details":{"lifespan":"12 - 14 years","weight":"4 - 9 lbs","coatType":"Hairless","groomingLevel":"High"},"tags":["affectionate","lively","friendly","playful"]},
+  {"id":"breed-009","name":"Bengal","origin":"United States","temperament":"Alert, Agile, Energetic, Demanding, Intelligent","description":"The Bengal is a domesticated cat breed created from hybrids of domestic cats and the Asian leopard cat. Their wild appearance is complemented by their energetic personality.","image_url":"https://cdn.mos.cms.futurecdn.net/v2/t:0,l:420,cw:1080,ch:1080,q:80,w:1080/Uwu9iN5UXkusxNwr2Dixuh.jpg","details":{"lifespan":"12 - 15 years","weight":"8 - 17 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["alert","agile","energetic","intelligent"]},
+  {"id":"breed-010","name":"Birman","origin":"France","temperament":"Affectionate, Active, Gentle, Social","description":"The Birman is a domestic cat breed also called the Sacred Cat of Burma. It is distinguished by a silky coat, deep-blue eyes, and white gloves on each paw.","image_url":"https://www.thesprucepets.com/thmb/D5s03LINbIYpZuiG6uvBpKrAKXk=/3500x0/filters:no_upscale():strip_icc()/GettyImages-623368786-f66c97ad6d2d494287b448415f4340a8.jpg","details":{"lifespan":"14 - 15 years","weight":"10 - 12 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["affectionate","gentle","social","active"]},
+  {"id":"breed-011","name":"Bombay","origin":"United States","temperament":"Affectionate, Dependable, Gentle, Intelligent, Playful","description":"The Bombay is a type of short-haired cat developed by breeding sable Burmese and black American Shorthair cats, to produce a cat of mostly Burmese type, but with a jet-black coat.","image_url":"https://www.thesprucepets.com/thmb/RnGTM5ENlWu-D4oND397jksaUCw=/1911x0/filters:no_upscale():strip_icc()/bombay-cat-full-profile-history-and-care-5202250-hero-85810f454cf84a7786e650136a10f91c.jpg","details":{"lifespan":"12 - 16 years","weight":"8 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","gentle","intelligent","playful"]},
+  {"id":"breed-012","name":"British Longhair","origin":"United Kingdom","temperament":"Affectionate, Gentle, Quiet, Calm","description":"The British Longhair is a medium to large, semi-longhaired breed of cat. They are calm, gentle, and very affectionate with family.","image_url":"https://img1.wsimg.com/isteam/ip/4e256fb4-245f-429e-a2fa-0fc7a894d617/IMG_0023.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280","details":{"lifespan":"12 - 14 years","weight":"8 - 16 lbs","coatType":"Long","groomingLevel":"High"},"tags":["affectionate","gentle","quiet","calm"]},
+  {"id":"breed-013","name":"British Shorthair","origin":"United Kingdom","temperament":"Affectionate, Easy Going, Gentle, Loyal, Patient, Calm","description":"The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively chunky body and dense coat. They are calm, easygoing, and very loyal.","image_url":"https://cfa.org/wp-content/uploads/2024/04/2023-k07i-BabyrayBlueCheeses.webp","details":{"lifespan":"12 - 17 years","weight":"7 - 17 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","gentle","loyal","calm"]},
+  {"id":"breed-014","name":"Burmese","origin":"Myanmar","temperament":"Curious, Intelligent, Gentle, Social","description":"The Burmese is a breed of domestic cat, originating in Burma (Myanmar), believed to have its roots near the Thai-Burma border. They are curious, social, and love people.","image_url":"https://cdn2.thecatapi.com/images/4lXnnfxac.jpg","details":{"lifespan":"16 - 18 years","weight":"8 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["curious","intelligent","gentle","social"]},
+  {"id":"breed-015","name":"Burmilla","origin":"United Kingdom","temperament":"Curious, Intelligent, Friendly, Gentle, Quiet","description":"The Burmilla is a breed of domestic cat which originated in the United Kingdom in 1981. They are known for their shimmery, silver coat and gentle personality.","image_url":"https://cdn2.thecatapi.com/images/HOrX5gwLS.jpg","details":{"lifespan":"10 - 15 years","weight":"8 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["curious","intelligent","friendly","gentle"]},
+  {"id":"breed-016","name":"California Spangled","origin":"United States","temperament":"Affectionate, Curious, Active, Intelligent, Playful, Social","description":"The California Spangled is a breed of domestic cat that was bred to resemble spotted wild cats, like the leopard and ocelot. They are active and social.","image_url":"https://cats.com/wp-content/uploads/2020/10/The-California-Spangled-Cats.jpg","details":{"lifespan":"9 - 16 years","weight":"8 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["curious","active","intelligent","social"]},
+  {"id":"breed-017","name":"Chantilly-Tiffany","origin":"United States","temperament":"Affectionate, Demanding, Friendly, Gentle, Quiet, Soft-voiced","description":"The Chantilly-Tiffany is a semi-longhaired cat breed with a chocolate-brown coat. They are gentle, affectionate, and devoted to their owners.","image_url":"https://cats.com/wp-content/uploads/2020/10/the-Chantilly-Tiffany.jpg","details":{"lifespan":"14 - 16 years","weight":"6 - 12 lbs","coatType":"Semi-Long","groomingLevel":"Medium"},"tags":["affectionate","friendly","gentle","quiet"]},
+  {"id":"breed-018","name":"Chartreux","origin":"France","temperament":"Affectionate, Loyal, Intelligent, Social, Lively, Playful","description":"The Chartreux is a rare breed of cat from France. They are known for their blue-gray coats, orange-copper eyes, and quiet, observant nature.","image_url":"https://cdn2.thecatapi.com/images/j6oFGLpRG.jpg","details":{"lifespan":"11 - 15 years","weight":"6 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","loyal","intelligent","playful"]},
+  {"id":"breed-019","name":"Chausie","origin":"France","temperament":"Affectionate, Intelligent, Playful, Social","description":"The Chausie is a domestic breed of cat that was developed by breeding a few individuals from non-domestic species to a far greater number of domestic cats. They are active and love to jump.","image_url":"https://cdn.shopify.com/s/files/1/0568/0450/7691/files/Chausie-3_600x600.jpg?v=1715597909","details":{"lifespan":"10 - 15 years","weight":"15 - 20 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","intelligent","playful","social"]},
+  {"id":"breed-020","name":"Colorpoint Shorthair","origin":"United States","temperament":"Affectionate, Intelligent, Playful, Social","description":"The Colorpoint Shorthair is a type of Siamese cat that displays non-traditional Siamese point coloration. They are very communicative and people-oriented.","image_url":"https://upload.wikimedia.org/wikipedia/commons/1/11/Chocolate_Tortie_Pt_11636-140.jpg","details":{"lifespan":"12 - 16 years","weight":"5 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","intelligent","playful","social"]},
+  {"id":"breed-021","name":"Cornish Rex","origin":"United Kingdom","temperament":"Active, Affectionate, Energetic, Intelligent, Lively","description":"The Cornish Rex is a breed of domestic cat. Their most notable feature is the extremely soft, wavy coat. They are energetic, playful, and love attention.","image_url":"https://vgl.ucdavis.edu/sites/g/files/dgvnsk15116/files/inline-images/Cornish-Rex-Coat-Adjusted-600px.jpg","details":{"lifespan":"11 - 15 years","weight":"6 - 10 lbs","coatType":"Wavy","groomingLevel":"Low"},"tags":["active","affectionate","energetic","intelligent"]},
+  {"id":"breed-022","name":"Cymric","origin":"Canada","temperament":"Affectionate, Gentle, Lively, Loyal, Intelligent, Social","description":"The Cymric is a semi-longhaired version of the Manx cat, sharing its characteristic rounded appearance and lack of tail. They are gentle and devoted companions.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Cymric%20Cat%203.jpg","details":{"lifespan":"8 - 14 years","weight":"7 - 13 lbs","coatType":"Long","groomingLevel":"High"},"tags":["affectionate","gentle","loyal","social"]},
+  {"id":"breed-023","name":"Cyprus","origin":"Cyprus","temperament":"Affectionate, Social, Interactive, Playful","description":"The Cyprus cat is a landrace of domestic cat believed to be one of the oldest cat breeds in the world. They are natural, robust, and highly adaptable.","image_url":"https://www.catster.com/wp-content/uploads/2023/11/Aphrodite-giant-cat-colored-backgrounds_Oleksandr-Volchanskyi-Shutterstock.jpg","details":{"lifespan":"12 - 15 years","weight":"8 - 16 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["affectionate","social","interactive","playful"]},
+  {"id":"breed-024","name":"Devon Rex","origin":"United Kingdom","temperament":"Active, Affectionate, Loyal, Mischievous, Playful, Social","description":"The Devon Rex is a breed of intelligent, short-haired cat that emerged in England during the late 1950s. They are known for their large ears and curly, soft coat.","image_url":"https://cdn2.thecatapi.com/images/CDhOtM-Ig.jpg","details":{"lifespan":"10 - 15 years","weight":"5 - 10 lbs","coatType":"Wavy/Short","groomingLevel":"Low"},"tags":["active","affectionate","loyal","mischievous"]},
+  {"id":"breed-025","name":"Donskoy","origin":"Russia","temperament":"Affectionate, Curious, Intelligent, Loyal","description":"The Donskoy is a hairless cat breed of Russian origin. They are known for their warmth and loyalty to their human companions.","image_url":"https://wopet.com/uploads/admin/image/20250619/1b3f80c9c3d044ab6c15fb8beaa5ee3c.png","details":{"lifespan":"12 - 15 years","weight":"6 - 15 lbs","coatType":"Hairless","groomingLevel":"High"},"tags":["affectionate","curious","intelligent","loyal"]},
+  {"id":"breed-026","name":"Dragon Li","origin":"China","temperament":"Intelligent, Loving, Agile, Curious, Friendly","description":"The Dragon Li, also called the Li Hua or Chinese Li Hua, is a natural breed originating in China. They are known for their distinctive golden-brown tabby pattern.","image_url":"https://cdn-images.vetstreet.com/cb/ed/5781fa4445dfae2288fd3bb0a3fe/li-hua-looking-at-camera-10935-146-645sm82115.jpg","details":{"lifespan":"12 - 15 years","weight":"9 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["intelligent","loving","agile","curious"]},
+  {"id":"breed-027","name":"Dwelf","origin":"United States","temperament":"Friendly, Lively, Devoted, Playful","description":"The Dwelf is a new experimental breed that combines characteristics of the Munchkin, American Curl, and Sphynx. They are hairless with short legs and curled ears.","image_url":"https://cdn2.thecatapi.com/images/j6oFGLpRG.jpg","details":{"lifespan":"12 - 15 years","weight":"4 - 9 lbs","coatType":"Hairless","groomingLevel":"High"},"tags":["friendly","lively","devoted","playful"]},
+  {"id":"breed-028","name":"Egyptian Mau","origin":"Egypt","temperament":"Active, Curious, Friendly, Gentle, Loyal, Playful","description":"The Egyptian Mau is a small to medium-sized short-haired cat breed. They are the fastest of the domestic cats and are known for their naturally occurring spotted coat.","image_url":"https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/12-27/Egyptian+mau+cat+relaxing+on+a+gray+green+couch-min.jpg","details":{"lifespan":"9 - 13 years","weight":"7 - 9 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","curious","gentle","loyal"]},
+  {"id":"breed-029","name":"European Burmese","origin":"Myanmar","temperament":"Curious, Lively, Affectionate, Gentle","description":"The European Burmese is closely related to the American Burmese but has a more moderate body type. They are extremely people-oriented and love being involved in family activities.","image_url":"https://www.thesprucepets.com/thmb/7K3EGk7u3obrOmi7avQBKoEZf40=/2883x0/filters:no_upscale():strip_icc()/burmese-cat-breed-profile-4584510-hero-b7e3ecbe46ce4dc18a15351f8224b331.jpg","details":{"lifespan":"16 - 18 years","weight":"8 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["curious","lively","affectionate","gentle"]},
+  {"id":"breed-030","name":"Exotic Shorthair","origin":"United States","temperament":"Affectionate, Curious, Loyal, Quiet, Gentle","description":"The Exotic Shorthair is a breed of cat developed as a short-haired version of the Persian. They share many traits with their long-haired counterparts but are easier to maintain.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Exotic%20Shorthair%20Cat%203.jpg","details":{"lifespan":"12 - 15 years","weight":"10 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","loyal","quiet","gentle"]},
+  {"id":"breed-031","name":"Havana Brown","origin":"United Kingdom","temperament":"Affectionate, Curious, Demanding, Gentle, Intelligent, Playful, Social","description":"The Havana Brown is a domestic cat breed. It was the result of a planned breeding between Siamese and domestic black cats in England. They are affectionate and curious.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Havana%20Brown%20Cat%203.jpg","details":{"lifespan":"10 - 15 years","weight":"6 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","curious","gentle","intelligent"]},
+  {"id":"breed-032","name":"Himalayan","origin":"United States","temperament":"Dependent, Gentle, Intelligent, Quiet, Social, Calm","description":"The Himalayan is a breed or sub-breed of long-haired cat identical in type to the Persian, with the exception of its blue eyes and its point coloration. They are gentle and calm.","image_url":"https://cdn2.thecatapi.com/images/CDhOtM-Ig.jpg","details":{"lifespan":"9 - 15 years","weight":"7 - 14 lbs","coatType":"Long","groomingLevel":"High"},"tags":["gentle","quiet","social","calm"]},
+  {"id":"breed-033","name":"Japanese Bobtail","origin":"Japan","temperament":"Active, Agile, Friendly, Intelligent, Lively, Playful","description":"The Japanese Bobtail is a breed of domestic cat with an unusual bobtail resembling the tail of a rabbit. They are known for their distinctive chirping tones and playful personality.","image_url":"https://www.purina.com/sites/default/files/styles/social_share/public/2025-08/japanese_bobtail_cat_1.jpg?h=82f92a78&itok=1eQUYi_L","details":{"lifespan":"15 - 18 years","weight":"6 - 10 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["active","agile","friendly","playful"]},
+  {"id":"breed-034","name":"Javanese","origin":"United States","temperament":"Affectionate, Intelligent, Playful, Social","description":"The Javanese is a longhaired version of the Colorpoint Shorthair, accepted by the Cat Fanciers' Association as a separate breed. They are very active and vocal.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Javanese%20Cat%204.jpg","details":{"lifespan":"10 - 15 years","weight":"5 - 10 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["affectionate","intelligent","playful","social"]},
+  {"id":"breed-035","name":"Khao Manee","origin":"Thailand","temperament":"Curious, Active, Loyal, Friendly","description":"The Khao Manee is an ancient breed of cat originating in Thailand. They are known for their pure white coat and odd-colored eyes, often one blue and one golden.","image_url":"https://wopet.com/uploads/admin/image/20250630/352121c9ccc42c8ea1d22adf813a930b.png","details":{"lifespan":"10 - 12 years","weight":"8 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["curious","active","loyal","friendly"]},
+  {"id":"breed-036","name":"Korat","origin":"Thailand","temperament":"Active, Loyal, Expressive, Trainable","description":"The Korat is a silver-tipped blue-grey, short-haired breed of cat named after the Nakhon Ratchasima province in Thailand. They form strong bonds with their people.","image_url":"https://www.purina.co.uk/sites/default/files/2022-06/Korat.1.jpg?h=d9eda887&itok=OLX5olO5","details":{"lifespan":"10 - 15 years","weight":"6 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","loyal","expressive","trainable"]},
+  {"id":"breed-037","name":"Kurilian Bobtail","origin":"Russia","temperament":"Curious, Intelligent, Playful, Social","description":"The Kurilian Bobtail is a cat breed originating from the Kuril Islands of Russia. Their most distinctive feature is their short, fluffy pom-pom tail.","image_url":"https://cdn.shopify.com/s/files/1/0997/4496/articles/Kurilian_Bobtail_Cat_14679ff4-aa85-49a3-a008-8f13de1381c0.png?v=1730330244","details":{"lifespan":"15 - 20 years","weight":"7 - 15 lbs","coatType":"Short/Long","groomingLevel":"Medium"},"tags":["curious","intelligent","playful","social"]},
+  {"id":"breed-038","name":"LaPerm","origin":"United States","temperament":"Active, Affectionate, Gentle, Intelligent, Playful, Social","description":"LaPerm is a rex breed, meaning it has a curly coat that is the result of a natural genetic mutation. They are affectionate, gentle, and love to cuddle.","image_url":"https://cdn-images.vetstreet.com/dc/36/ee3fbfc34d718af43908fa927299/LaPerm-AP-AGGHMB-645sm3614.jpg","details":{"lifespan":"10 - 15 years","weight":"6 - 12 lbs","coatType":"Curly","groomingLevel":"Low"},"tags":["active","affectionate","gentle","playful"]},
+  {"id":"breed-039","name":"Lykoi","origin":"United States","temperament":"Active, Affectionate, Aggressive, Curious, Friendly, Intelligent, Playful, Social","description":"The Lykoi, also called the werewolf cat, is a natural mutation from a domestic shorthaired cat that has a unique wolf-like appearance. They are curious and social.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Lykoi%20cat%202.jpg","details":{"lifespan":"12 - 15 years","weight":"6 - 12 lbs","coatType":"Sparse","groomingLevel":"Low"},"tags":["active","affectionate","curious","playful"]},
+  {"id":"breed-040","name":"Maine Coon","origin":"United States","temperament":"Affectionate, Intelligent, Playful, Gentle","description":"Maine Coon is one of the largest domesticated breeds of cat. It has a distinctive physical appearance and valuable hunting skills. They are often called the dogs of the cat world.","image_url":"https://headsupfortails.com/cdn/shop/articles/Maine_Coon_Cat_Breed_Guide_37867989-7b75-465d-be5a-e188f51e67d3.jpg?v=1754547063","details":{"lifespan":"12 - 15 years","weight":"10 - 25 lbs","coatType":"Long","groomingLevel":"High"},"tags":["affectionate","intelligent","playful","gentle"]},
+  {"id":"breed-041","name":"Malayan","origin":"United States","temperament":"Affectionate, Curious, Gentle, Playful","description":"The Malayan is closely related to the Burmese. They share the same sable brown color but have a more moderate body type and are gentle, loving companions.","image_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaD2JbNXfQqihkRhMD_KSacoi9z-_EHg5BS8eIc5GL2dsiGdIr6mNie1gH&s=10","details":{"lifespan":"12 - 16 years","weight":"8 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","curious","gentle","playful"]},
+  {"id":"breed-042","name":"Manx","origin":"United Kingdom","temperament":"Affectionate, Intelligent, Loyal, Playful, Social","description":"The Manx cat is a breed of domestic cat originating on the Isle of Man, with a naturally occurring mutation that results in a shortened tail. They are social and intelligent.","image_url":"https://cdn-images.vetstreet.com/5d/60/fcf5ff6c43c78cc18cd0a338b0ce/manx-ap-6ssfgc.jpg","details":{"lifespan":"9 - 13 years","weight":"8 - 12 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["affectionate","intelligent","loyal","playful"]},
+  {"id":"breed-043","name":"Munchkin","origin":"United States","temperament":"Agile, Easy Going, Intelligent, Playful, Social","description":"The Munchkin cat is characterized by its very short legs, which are caused by a naturally occurring genetic mutation. They are playful, people-oriented, and full of energy.","image_url":"https://cdn.shopify.com/s/files/1/0311/9598/8101/files/Cute_orange_and_white_Munchkin_Cat_close_up_480x480.jpg?v=1607352663","details":{"lifespan":"12 - 15 years","weight":"5 - 9 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["agile","easygoing","intelligent","playful"]},
+  {"id":"breed-044","name":"Nebelung","origin":"United States","temperament":"Gentle, Quiet, Shy, Intelligent, Social","description":"The Nebelung is a rare pedigree breed of domestic cat. Its name is derived from the German word for mist or fog. They are gentle, shy, and form strong bonds with their family.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Nebelung%20Cat%201.jpg","details":{"lifespan":"11 - 16 years","weight":"7 - 15 lbs","coatType":"Long","groomingLevel":"High"},"tags":["gentle","quiet","shy","intelligent"]},
+  {"id":"breed-045","name":"Norwegian Forest Cat","origin":"Norway","temperament":"Gentle, Independent, Intelligent, Lively","description":"The Norwegian Forest cat is a breed of domestic cat originating in Northern Europe. They are adapted to a very cold climate, with a top coat of long, glossy hair.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Norwegian%20Forest%20Cat%204.jpg","details":{"lifespan":"14 - 16 years","weight":"13 - 22 lbs","coatType":"Long","groomingLevel":"High"},"tags":["gentle","independent","intelligent","lively"]},
+  {"id":"breed-046","name":"Ocicat","origin":"United States","temperament":"Active, Agile, Curious, Demanding, Gentle, Intelligent, Lively, Social","description":"The Ocicat is an all-domestic breed of cat which resembles a wild cat but has no wild DNA in its gene pool. They are sociable and love human interaction.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Ocicat%201.jpg","details":{"lifespan":"10 - 15 years","weight":"6 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","agile","curious","intelligent"]},
+  {"id":"breed-047","name":"Oriental","origin":"United Kingdom","temperament":"Energetic, Affectionate, Curious, Intelligent, Demanding","description":"The Oriental is a breed of domestic cat that is developed from and closely related to the Siamese cat. They come in over 300 color and pattern combinations.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Oriental%20Short%20Hair%20Cat%201.jpg","details":{"lifespan":"12 - 15 years","weight":"6 - 12 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["energetic","affectionate","curious","intelligent"]},
+  {"id":"breed-048","name":"Persian","origin":"Iran","temperament":"Affectionate, Loyal, Gentle, Quiet, Docile","description":"The Persian cat is a long-haired breed of cat characterized by its round face and short muzzle. They are known for their calm, gentle temperament and luxurious coat.","image_url":"https://dbw3zep4prcju.cloudfront.net/animal/3cac1dd5-9d7c-4539-b390-cb46caa016ff/image/e745bd97-d4f4-45ae-b2ad-92ac8518e663.jpeg","details":{"lifespan":"10 - 17 years","weight":"7 - 12 lbs","coatType":"Long","groomingLevel":"High"},"tags":["affectionate","loyal","gentle","docile"]},
+  {"id":"breed-049","name":"Pixie-bob","origin":"United States","temperament":"Affectionate, Loyal, Social, Playful","description":"The Pixie-bob is a breed of domestic cat claimed by breed founder Carol Ann Brewer to be the progeny of naturally occurring bobcat hybrids. They are devoted and dog-like.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Pixiebob%20Cat%201.jpg","details":{"lifespan":"13 - 15 years","weight":"8 - 17 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["affectionate","loyal","social","playful"]},
+  {"id":"breed-050","name":"Ragamuffin","origin":"United States","temperament":"Affectionate, Friendly, Gentle, Calm","description":"The RagaMuffin is a breed of domestic cat. They are similar to the Ragdoll cat in appearance but have a wider variety of colors and patterns.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Ragamuffin%20Cat%204_0.jpg","details":{"lifespan":"12 - 16 years","weight":"10 - 20 lbs","coatType":"Long","groomingLevel":"High"},"tags":["affectionate","friendly","gentle","calm"]},
+  {"id":"breed-051","name":"Ragdoll","origin":"United States","temperament":"Affectionate, Gentle, Intelligent, Calm, Social","description":"The Ragdoll is a cat breed with a color point coat and blue eyes. Their name refers to the tendency of individuals from the original breeding stock to go limp and relaxed when picked up.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Ragdoll%201.jpg","details":{"lifespan":"12 - 17 years","weight":"12 - 20 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["affectionate","gentle","calm","social"]},
+  {"id":"breed-052","name":"Russian Blue","origin":"Russia","temperament":"Affectionate, Gentle, Intelligent, Loyal, Quiet, Shy","description":"The Russian Blue is a cat breed that has a distinctive blue coat and green eyes. They are known for their gentle, quiet nature and devotion to their families.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Russian%20Blue%20Cat%203.jpg","details":{"lifespan":"15 - 20 years","weight":"7 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","gentle","intelligent","quiet"]},
+  {"id":"breed-053","name":"Savannah","origin":"United States","temperament":"Active, Adventurous, Curious, Loyal, Intelligent, Social","description":"The Savannah is a hybrid cat breed. It is a cross between the serval and a domestic cat. They are one of the largest domestic cat breeds and are very active.","image_url":"https://dbw3zep4prcju.cloudfront.net/animal/8160d152-76e3-4c0b-bca7-6ce7992c522a/image/39f0bf9b-19f7-40b9-8f34-7eca0294112a.jpg?versionId=BxkWv4cR581z_tgFmQZDF_8hOp2wN5oZ","details":{"lifespan":"12 - 20 years","weight":"12 - 25 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","adventurous","curious","intelligent"]},
+  {"id":"breed-054","name":"Scottish Fold","origin":"United Kingdom","temperament":"Affectionate, Gentle, Intelligent, Social","description":"The Scottish Fold is a breed of domestic cat with a natural dominant-gene mutation that affects cartilage throughout the body, causing the ears to fold, bending forward and down.","image_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ygBG8wgP80rd4lP9oE2L4cb8EqostesReP8ad2lbZZInq0gMJGKdTQe5&s=10","details":{"lifespan":"11 - 14 years","weight":"6 - 13 lbs","coatType":"Short/Long","groomingLevel":"Low"},"tags":["affectionate","gentle","intelligent","social"]},
+  {"id":"breed-055","name":"Selkirk Rex","origin":"United States","temperament":"Active, Affectionate, Gentle, Lively, Loyal, Social","description":"The Selkirk Rex is a breed of cat with highly curled hair, including its whiskers. Unlike other rex breeds, the Selkirk Rex gene is dominant and results in three types of coats.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Selkirk%20Rex%20Cat%201.jpg","details":{"lifespan":"10 - 15 years","weight":"6 - 16 lbs","coatType":"Curly","groomingLevel":"Medium"},"tags":["active","affectionate","gentle","loyal"]},
+  {"id":"breed-056","name":"Serengeti","origin":"United States","temperament":"Affectionate, Agile, Curious, Friendly, Intelligent, Lively, Social","description":"The Serengeti is a breed of cat developed in the 1990s by crossing Bengal and Oriental Shorthair cats. They resemble a serval in appearance but are entirely domestic.","image_url":"https://cats.com/wp-content/uploads/2020/10/kitten-Serengeti.jpg","details":{"lifespan":"10 - 15 years","weight":"8 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","agile","curious","intelligent"]},
+  {"id":"breed-057","name":"Siamese","origin":"Thailand","temperament":"Active, Agile, Clever, Sociable, Loving, Energetic","description":"The Siamese is one of the oldest recognized breeds of domestic cat. Their most distinctive features are their blue eyes and colored points. They are extremely vocal and social.","image_url":"https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg","details":{"lifespan":"12 - 15 years","weight":"8 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","clever","sociable","energetic"]},
+  {"id":"breed-058","name":"Siberian","origin":"Russia","temperament":"Active, Agile, Curious, Friendly, Intelligent, Loyal, Playful","description":"The Siberian is a landrace variety of domestic cat that has been present in Russia for centuries. They are large, powerful cats with a dense, semi-longhaired coat.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Siberian%20Cat%201.jpg","details":{"lifespan":"11 - 15 years","weight":"10 - 20 lbs","coatType":"Long","groomingLevel":"High"},"tags":["active","agile","curious","intelligent"]},
+  {"id":"breed-059","name":"Singapura","origin":"Singapore","temperament":"Affectionate, Curious, Lively, Playful, Sensible","description":"The Singapura is one of the smallest breeds of cats. They are known for their large eyes and ears, brown ticked coat, and blunt tail. They are curious and playful.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Singapura%20Cat%203.jpg","details":{"lifespan":"11 - 15 years","weight":"4 - 8 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","curious","lively","playful"]},
+  {"id":"breed-060","name":"Snowshoe","origin":"United States","temperament":"Affectionate, Docile, Lively, Playful, Social","description":"The Snowshoe is a breed of cat originating in the United States of America in the 1960s. They are a combination of Siamese and American Shorthair traits.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Snowshoe%20Cat%202.jpg","details":{"lifespan":"14 - 19 years","weight":"7 - 14 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["affectionate","lively","playful","social"]},
+  {"id":"breed-061","name":"Sokoke","origin":"Kenya","temperament":"Active, Curious, Friendly, Intelligent, Lively, Social","description":"The Sokoke is a natural breed originating from the Arabuko Sokoke forest in Kenya. They are characterized by a modified classic tabby pattern on their coat.","image_url":"https://www.gccfcats.org/wp-content/uploads/2021/09/Sokoke.jpg","details":{"lifespan":"15 - 20 years","weight":"5 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","curious","friendly","intelligent"]},
+  {"id":"breed-062","name":"Somali","origin":"Somalia","temperament":"Active, Energetic, Independent, Intelligent, Gentle, Quiet","description":"The Somali cat is often described as a long-haired Abyssinian. They are very active, playful cats known for their fox-like bushy tail and wild appearance.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Somali%20Cat%202.jpg","details":{"lifespan":"11 - 16 years","weight":"6 - 10 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["active","energetic","independent","intelligent"]},
+  {"id":"breed-063","name":"Sphynx","origin":"Canada","temperament":"Curious, Intelligent, Friendly, Affectionate, Loyal","description":"The Sphynx cat is a breed of cat known for its lack of coat (fur). The Sphynx is known to be extroverted and energetic, with a high level of curiosity.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Sphynx%20%203.jpg","details":{"lifespan":"8 - 14 years","weight":"6 - 14 lbs","coatType":"Hairless","groomingLevel":"High"},"tags":["curious","intelligent","friendly","affectionate"]},
+  {"id":"breed-064","name":"Suphalak","origin":"Thailand","temperament":"Loving, Loyal, Curious, Friendly","description":"The Suphalak is an ancient and very rare Thai breed with a solid copper or reddish-brown coat. They were mentioned in the Cat Book Poems from ancient Siam.","image_url":"https://www.catster.com/wp-content/uploads/2023/11/suphalak-cat-in-bed_Nattakorn-Suphatheera_Shutterstock.jpg","details":{"lifespan":"10 - 15 years","weight":"8 - 10 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["loving","loyal","curious","friendly"]},
+  {"id":"breed-065","name":"Tiger","origin":"Various","temperament":"Active, Alert, Assertive, Energetic, Intelligent","description":"Tiger cats refer to domestic cats with a striped tabby pattern resembling that of a tiger. They are energetic and playful cats with a bold personality.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Toyger%20Cat%202.jpg","details":{"lifespan":"10 - 15 years","weight":"8 - 16 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","alert","energetic","intelligent"]},
+  {"id":"breed-066","name":"Tonkinese","origin":"Canada","temperament":"Active, Agile, Curious, Friendly, Intelligent, Playful, Social","description":"The Tonkinese is a domestic cat breed produced by crossbreeding between the Siamese and Burmese. They are active, social, and have a great sense of humor.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Tonkinese%20Cat%20%201.jpg","details":{"lifespan":"10 - 16 years","weight":"6 - 12 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","curious","friendly","intelligent"]},
+  {"id":"breed-067","name":"Toyger","origin":"United States","temperament":"Active, Friendly, Intelligent, Playful, Social","description":"The Toyger is a breed of domestic cat, the result of breeding striped domestic shorthaired cats to create the impression of a toy tiger. They are friendly and intelligent.","image_url":"https://cdn2.thecatapi.com/images/vJB8rwfdX.jpg","details":{"lifespan":"10 - 15 years","weight":"7 - 15 lbs","coatType":"Short","groomingLevel":"Low"},"tags":["active","friendly","intelligent","playful"]},
+  {"id":"breed-068","name":"Turkish Angora","origin":"Turkey","temperament":"Affectionate, Agile, Clever, Demanding, Friendly, Gentle, Loving, Social","description":"The Turkish Angora is a breed of domestic cat. Turkish Angoras are one of the ancient, naturally-occurring cat breeds, having originated in central Anatolia.","image_url":"https://spotpetinsurance.ca/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fm5ehn3s5t7ec%2Fwp-image-198686%2Fe9948a3cab18f4011906372002391cef%2FTurkish_Angora_Cat.jpg&w=3840&q=75","details":{"lifespan":"12 - 18 years","weight":"5 - 9 lbs","coatType":"Long","groomingLevel":"Medium"},"tags":["affectionate","clever","friendly","loving"]},
+  {"id":"breed-069","name":"Turkish Van","origin":"Turkey","temperament":"Active, Affectionate, Agile, Clever, Independent, Intelligent, Lively, Loyal","description":"The Turkish Van is a semi-longhaired cat breed. They are known for their unique pattern of color on the head and tail on an otherwise white cat. They love water.","image_url":"https://consumer-cms.petfinder.com/sites/default/files/images/content/Turkish%20Van%20cat%203.jpg","details":{"lifespan":"12 - 17 years","weight":"10 - 20 lbs","coatType":"Semi-Long","groomingLevel":"Low"},"tags":["active","affectionate","clever","intelligent"]},
+  {"id":"breed-070","name":"York Chocolate","origin":"United States","temperament":"Active, Curious, Friendly, Playful, Social","description":"The York Chocolate is an uncommon American breed of show cat, with a long, fluffy, chocolatey-brown coat. They are friendly, active, and enjoy following their owners.","image_url":"https://cats.com/wp-content/uploads/2020/10/york-cat-1.jpg","details":{"lifespan":"13 - 15 years","weight":"10 - 16 lbs","coatType":"Long","groomingLevel":"High"},"tags":["active","curious","friendly","playful"]},
+  {"id": "breed-071","name": "Alpine Shorthair","origin": "Switzerland","temperament": "Gentle, Intelligent, Calm, Loyal","description": "The Alpine Shorthair is a sturdy mountain breed known for its thick coat and calm nature. They bond deeply with their families.","image_url": "https://consumer-cms.petfinder.com/sites/default/files/images/content/Exotic%20Shorthair%20Cat%201.jpg","details":{"lifespan": "12 - 16 years","weight": "8 - 14 lbs","coatType": "Short","groomingLevel": "Low"},"tags": ["gentle", "intelligent", "calm", "loyal"]},
+  {
+    "id": "breed-072",
+    "name": "Sahara Sandcat",
+    "origin": "Morocco",
+    "temperament": "Active, Curious, Agile, Independent",
+    "description": "The Sahara Sandcat is inspired by desert-dwelling felines, known for agility and curiosity. They thrive in active households.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s",
+    "details":{
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "independent"]
+  },
+  {
+    "id": "breed-073",
+    "name": "Nordic Curl",
+    "origin": "Finland",
+    "temperament": "Affectionate, Playful, Social, Intelligent",
+    "description": "The Nordic Curl is known for its curled ears and friendly personality. They enjoy interactive play and human companionship.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTlRN7NzI0P-zZp1jh-ZlXQn91LErwDdT3u0F-N0qRyg&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short/Long",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["affectionate", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-074",
+    "name": "Highland Mist",
+    "origin": "Scotland",
+    "temperament": "Gentle, Quiet, Loyal, Calm",
+    "description": "The Highland Mist is a serene breed with a soft, misty coat. They prefer quiet environments and form strong bonds.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_D896EnKE_Gja88nG6dwsmA3s6pPIhOKihokj2H0rQQ&s",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 15 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "loyal", "calm"]
+  },
+  {
+    "id": "breed-075",
+    "name": "Pacific Wave",
+    "origin": "United States",
+    "temperament": "Active, Social, Intelligent, Playful",
+    "description": "The Pacific Wave is a coastal-inspired breed known for its wavy coat and energetic personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGzw4ZqSVyKgK8jUt9oS2-kmdCKX9wJRIdqW2sgmqXVA&s=10",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Wavy",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["active", "social", "intelligent", "playful"]
+  },
+  {
+    "id": "breed-076",
+    "name": "Aurora Longcoat",
+    "origin": "Sweden",
+    "temperament": "Gentle, Quiet, Loyal, Calm",
+    "description": "The Aurora Longcoat is a serene Scandinavian breed known for its shimmering fur and gentle personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9TJCX1P8ZqDkb9i1JnSPTWR2o8CcfiJcnYRG3xAUKKg&s=10",
+    "details":{
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "loyal", "calm"]
+  },
+  {
+    "id": "breed-077",
+    "name": "Boreal Shorthair",
+    "origin": "Canada",
+    "temperament": "Active, Curious, Intelligent, Social",
+    "description": "The Boreal Shorthair is a hardy northern breed that thrives in cold climates and enjoys human interaction.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7G1Ye6U4MAwQ7QKh5EJjbvmW-gHEanBrKZKvRQtWMzA&s=10",
+    "details":{
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "intelligent", "social"]
+  },
+  {
+    "id": "breed-078",
+    "name": "Caspian Curl",
+    "origin": "Iran",
+    "temperament": "Affectionate, Playful, Gentle, Social",
+    "description": "The Caspian Curl is known for its curled ears and affectionate nature. They enjoy quiet companionship.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTlRN7NzI0P-zZp1jh-ZlXQn91LErwDdT3u0F-N0qRyg&s=10",
+    "details":{
+      "lifespan": "12 - 16 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short/Long",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["affectionate", "playful", "gentle", "social"]
+  },
+  {
+    "id": "breed-079",
+    "name": "Duskpoint",
+    "origin": "United States",
+    "temperament": "Calm, Loyal, Quiet, Intelligent",
+    "description": "The Duskpoint is a color‑point breed with a soft gradient coat and a calm, observant personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj7GyC0EZKSoQmujhv_h5Unixud3Apuh_FjzOqJrf25w&s",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 13 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["calm", "loyal", "quiet", "intelligent"]
+  },
+  {
+    "id": "breed-080",
+    "name": "Emerald Rex",
+    "origin": "Ireland",
+    "temperament": "Active, Energetic, Playful, Social",
+    "description": "The Emerald Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7G1Ye6U4MAwQ7QKh5EJjbvmW-gHEanBrKZKvRQtWMzA&s=10",
+    "details":{
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "energetic", "playful", "social"]
+  },
+  {
+    "id": "breed-081",
+    "name": "Fjord Cat",
+    "origin": "Norway",
+    "temperament": "Gentle, Independent, Intelligent, Calm",
+    "description": "The Fjord Cat is a mountain breed adapted to cold climates, known for its independence and gentle nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "9 - 16 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "independent", "intelligent", "calm"]
+  },
+  {
+    "id": "breed-082",
+    "name": "Golden Dune",
+    "origin": "Egypt",
+    "temperament": "Active, Curious, Agile, Social",
+    "description": "The Golden Dune is a desert‑inspired breed with a sandy coat and a highly curious personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "social"]
+  },
+  {
+    "id": "breed-083",
+    "name": "Harbor Longhair",
+    "origin": "United Kingdom",
+    "temperament": "Affectionate, Calm, Gentle, Quiet",
+    "description": "The Harbor Longhair is a peaceful breed with a silky coat and a preference for quiet environments.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_D896EnKE_Gja88nG6dwsmA3s6pPIhOKihokj2H0rQQ&s",
+    "details": {
+      "lifespan": "13 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["affectionate", "calm", "gentle", "quiet"]
+  },
+  {
+    "id": "breed-084",
+    "name": "Indigo Shorthair",
+    "origin": "Japan",
+    "temperament": "Playful, Intelligent, Social, Curious",
+    "description": "The Indigo Shorthair is a sleek, blue‑toned breed known for its intelligence and playful personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSV8UiBCClucitwWpr1sIWWZKGvtZIDc9vKtZXmvhWLA&s=10",
+    "details":{
+      "lifespan": "11 - 15 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "intelligent", "social", "curious"]
+  },
+  {
+    "id": "breed-085",
+    "name": "Jungle Mist",
+    "origin": "Brazil",
+    "temperament": "Active, Agile, Curious, Friendly",
+    "description": "The Jungle Mist is inspired by rainforest cats, known for agility and a friendly, curious nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsdsBwixGy3Jjq6PGVjrYqgq5CPMPljqhRh_vWCzvj7A&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "agile", "curious", "friendly"]
+  },
+  {
+    "id": "breed-086",
+    "name": "Kairo Curl",
+    "origin": "Egypt",
+    "temperament": "Affectionate, Social, Intelligent, Gentle",
+    "description": "The Kairo Curl is a desert‑origin breed with curled ears and a warm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTlRN7NzI0P-zZp1jh-ZlXQn91LErwDdT3u0F-N0qRyg&s=10",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["affectionate", "social", "intelligent", "gentle"]
+  },
+  {
+    "id": "breed-087",
+    "name": "Lunar Rex",
+    "origin": "United States",
+    "temperament": "Playful, Energetic, Intelligent, Social",
+    "description": "The Lunar Rex is a curly‑coated breed with a lively personality and a love for nighttime activity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr6dnYelGRRzWmLuxcQiJNnph0BEnGi6TqJ0oiLatBOQ&s=10",
+    "details":{
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "energetic", "intelligent", "social"]
+  },
+  {
+    "id": "breed-088",
+    "name": "Marina Shorthair",
+    "origin": "Portugal",
+    "temperament": "Calm, Gentle, Loyal, Quiet",
+    "description": "The Marina Shorthair is a coastal breed known for its calm demeanor and loyalty to its family.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThqxbeif2vqDXjyviYXPXAZbvwtX03MnYwJc9IZnUHLg&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["calm", "gentle", "loyal", "quiet"]
+  },
+  {
+    "id": "breed-089",
+    "name": "Nebula Longhair",
+    "origin": "Russia",
+    "temperament": "Quiet, Intelligent, Gentle, Shy",
+    "description": "The Nebula Longhair is a soft‑coated breed with a shy but deeply affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_D896EnKE_Gja88nG6dwsmA3s6pPIhOKihokj2H0rQQ&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["quiet", "intelligent", "gentle", "shy"]
+  },
+  {
+    "id": "breed-090",
+    "name": "Oasis Cat",
+    "origin": "Saudi Arabia",
+    "temperament": "Active, Curious, Agile, Independent",
+    "description": "The Oasis Cat is a desert‑adapted breed known for agility and independence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "independent"]
+  },
+  {
+    "id": "breed-091",
+    "name": "Polar Curl",
+    "origin": "Iceland",
+    "temperament": "Gentle, Loyal, Calm, Intelligent",
+    "description": "The Polar Curl is a cold‑climate breed with curled ears and a gentle, loyal personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkveKIkM6pdg-q1o894_kEGP_LvTxyMj3gLPO6GylCZw&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "loyal", "calm", "intelligent"]
+  },
+  {
+    "id": "breed-092",
+    "name": "Quartz Shorthair",
+    "origin": "Germany",
+    "temperament": "Intelligent, Calm, Gentle, Loyal",
+    "description": "The Quartz Shorthair is a sturdy European breed known for its calm temperament and intelligence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["intelligent", "calm", "gentle", "loyal"]
+  },
+  {
+    "id": "breed-093",
+    "name": "Riverine Cat",
+    "origin": "Bangladesh",
+    "temperament": "Active, Curious, Social, Playful",
+    "description": "The Riverine Cat is inspired by wetland felines, known for curiosity and playful behavior.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkF2be3wrq4XCkKY9AQBmeORy23DkL50yQ68cOogZAw&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "social", "playful"]
+  },
+  {
+    "id": "breed-094",
+    "name": "Saffron Longhair",
+    "origin": "India",
+    "temperament": "Gentle, Calm, Affectionate, Quiet",
+    "description": "The Saffron Longhair is a warm‑toned breed with a gentle personality and a preference for quiet homes.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREjLoxZxal0P2xoAtuFIYq1LOg_NJIQDlHCdmUfiPAZw&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "affectionate", "quiet"]
+  },
+  {
+    "id": "breed-095",
+    "name": "Savanna Curl",
+    "origin": "Kenya",
+    "temperament": "Active, Agile, Curious, Social",
+    "description": "The Savanna Curl is a wild‑inspired breed with curled ears and a highly active personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAw44eAzCAeCvoTg8UueH2hIwnvKSVj-ztn43GT98EWw&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "agile", "curious", "social"]
+  },
+  {
+    "id": "breed-096",
+    "name": "Seabreeze Cat",
+    "origin": "Australia",
+    "temperament": "Playful, Friendly, Social, Intelligent",
+    "description": "The Seabreeze Cat is a coastal breed known for its friendly nature and love for human interaction.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuykQ8nvBDA-vWGGB-kc-jjKq_8ymwvMQwzdj7j5lpgg&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "friendly", "social", "intelligent"]
+  },
+  {
+    "id": "breed-097",
+    "name": "Shadowpoint",
+    "origin": "United States",
+    "temperament": "Quiet, Calm, Loyal, Gentle",
+    "description": "The Shadowpoint is a color‑point breed with a dark gradient coat and a calm, gentle personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdLqSRQK6gwqoAllj57QY18uWIJMPBiO-zHS24Ykxqg&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 13 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["quiet", "calm", "loyal", "gentle"]
+  },
+  {
+    "id": "breed-098",
+    "name": "Silkstream",
+    "origin": "China",
+    "temperament": "Gentle, Social, Intelligent, Calm",
+    "description": "The Silkstream is a silky‑coated breed known for its gentle personality and strong social bonds.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZg9Jcn3ELIy_xbIOIMdXOyitdI4KnthrvCb5aouFJgQ&s",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "social", "intelligent", "calm"]
+  },
+  {
+    "id": "breed-099",
+    "name": "Solstice Rex",
+    "origin": "Denmark",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Solstice Rex is a curly‑coated breed with a bright personality and a love for activity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-100",
+    "name": "Starfall Cat",
+    "origin": "United States",
+    "temperament": "Calm, Gentle, Quiet, Loyal",
+    "description": "The Starfall Cat is a soft‑coated breed with a peaceful temperament and a preference for quiet homes.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzOcOq0z-DzcbA_BZMSKJNxp59O1WhzTu6J8X-bcLYmQ&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["calm", "gentle", "quiet", "loyal"]
+  },
+  {
+    "id": "breed-101",
+    "name": "Suncrest Shorthair",
+    "origin": "Spain",
+    "temperament": "Active, Social, Playful, Curious",
+    "description": "The Suncrest Shorthair is a sunny‑tempered breed known for its playful and social nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXgCyFu1f57_MxovZJqwBE_mUhOnXxjRHlhPIVFMyeVg&s=12",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "social", "playful", "curious"]
+  },
+  {
+    "id": "breed-102",
+    "name": "Twilight Mist",
+    "origin": "New Zealand",
+    "temperament": "Gentle, Calm, Loyal, Affectionate",
+    "description": "The Twilight Mist is a serene breed with a soft coat and a calm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGCO5Wpm7PrKW4-Jkea3vAaT4Gmz7BKE4WEummCfYqNw&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["gentle", "calm", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-103",
+    "name": "Velvet Curl",
+    "origin": "France",
+    "temperament": "Playful, Social, Intelligent, Gentle",
+    "description": "The Velvet Curl is a curly‑coated breed with a soft personality and a love for social interaction.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZIYdOXCN3Fl1Og0JxProgwakT3_rawXijBWi8S9hvGA&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "social", "intelligent", "gentle"]
+  },
+  {
+    "id": "breed-104",
+    "name": "Whispering Sands",
+    "origin": "Morocco",
+    "temperament": "Active, Curious, Agile, Independent",
+    "description": "The Whispering Sands is a desert‑adapted breed known for its agility and independent nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4iOFcBJYGpObvJMz8qBpxYS5oWbyxVfyc27hNvG9GmQ&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "independent"]
+  },
+  {
+    "id": "breed-105",
+    "name": "Zephyr Longhair",
+    "origin": "Italy",
+    "temperament": "Gentle, Calm, Loyal, Affectionate",
+    "description": "The Zephyr Longhair is a soft‑coated breed with a calm demeanor and a strong bond with its family.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAFsFIhRwhG_TO0iZ_EqUEcB2YwMMlO6kDjQHi3i60fg&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-106",
+    "name": "Aurora Mist",
+    "origin": "Canada",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Aurora Mist is a northern breed known for its playful nature and curiosity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShfUHOYvWM_fI1pLKI9i6gOM5_irU16YVudXZLH_ibeQ&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  },
+  {
+    "id": "breed-107",
+    "name": "Celestial Rex",
+    "origin": "United Kingdom",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Celestial Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP24DWMgVREyaJsXC22AgXbGjXD4TBpF4-7NMFXsVvrw&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-108",
+    "name": "Dawnlight Shorthair",
+    "origin": "Australia",
+    "temperament": "Calm, Gentle, Loyal, Affectionate",
+    "description": "The Dawnlight Shorthair is a serene breed with a soft coat and a calm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7sjpKFYyLSlhc3qNbcGRoeBN0XrbadB9xL52jRBgLtw&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["calm", "gentle", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-109",
+    "name": "Eclipse Longhair",
+    "origin": "Japan",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Eclipse Longhair is a sleek, long‑coated breed known for its intelligence and playful personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNXukoSUJoeuZNDX5-_n8uECiUeVLeC_xpxiQKieFllA&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  },
+  {
+    "id": "breed-110",
+    "name": "Frostbite Rex",
+    "origin": "Norway",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Frostbite Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIdPJUpqj5anXhK4qfHT-8PW7IXv7RQkK7qTJ6bos2MQ&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-111",
+    "name": "Glacier Shorthair",
+    "origin": "Iceland",
+    "temperament": "Calm, Gentle, Loyal, Affectionate",
+    "description": "The Glacier Shorthair is a serene breed with a soft coat and a calm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmCfFt_sZmtzpMszA0aOvNqgbyikE9EhrFNnLITMmSlg&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["calm", "gentle", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-112",
+    "name": "Horizon Mist",
+    "origin": "New Zealand",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Horizon Mist is a coastal breed known for its playful nature and curiosity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCHDC-DGYk9v0Bv6Pwz6dgiPMHMtFNL6UyRjpuLExqg&s=10",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  },
+  {
+    "id": "breed-113",
+    "name": "Iris Longhair",
+    "origin": "France",
+    "temperament": "Gentle, Calm, Loyal, Affectionate",
+    "description": "The Iris Longhair is a soft‑coated breed with a calm demeanor and a strong bond with its family.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEdXke1jSujBiVKN4qo-wGvjt-dulCgRCSUsGURLzD9Q&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-114",
+    "name": "Jade Shorthair",
+    "origin": "China",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Jade Shorthair is a sleek, short‑coated breed known for its intelligence and playful personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe4-hnTUPBllbd5mN9grLEtw-tcDAMv--fj5BLnxWKJg&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  },
+  {
+    "id": "breed-115",
+    "name": "Kestrel Rex",
+    "origin": "United Kingdom",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Kestrel Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR79eiEWjnXIcxSbbtbGAJHkUEUPb4FC7NgMQtwepOyaw&shttps://example.com/kestrel_rex.jpg",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-116",
+    "name": "Luminous Mist",
+    "origin": "Australia",
+    "temperament": "Calm, Gentle, Loyal, Affectionate",
+    "description": "The Luminous Mist is a serene breed with a soft coat and a calm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4zq9jJKUT2sGcRgAWpW-U7WrEssl04N1u_d2PNxggZQ&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Medium"
+    },
+    "tags": ["calm", "gentle", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-117",
+    "name": "Mystic Longhair",
+    "origin": "Japan",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Mystic Longhair is a sleek, long‑coated breed known for its intelligence and playful personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaUYDYzPtfLS23cf4aO0XuIJ1955wdBzPDY6dmRQZUzg&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  },
+  {
+    "id": "breed-118",
+    "name": "Nova Shorthair",
+    "origin": "Germany",
+    "temperament": "Calm, Gentle, Loyal, Affectionate",
+    "description": "The Nova Shorthair is a serene breed with a soft coat and a calm, affectionate personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT167uhrixBIaSDkWKiNiWXE-bkfajPAlxS77gE-SDEg&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["calm", "gentle", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-119",
+    "name": "Opal Rex",
+    "origin": "United Kingdom",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Opal Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEhQeWn3h5k8HNf9o8HaiLVpXbMesnLAx5C5mkHPTEHA&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-120",
+    "name": "Pearl Longhair",
+    "origin": "France",
+    "temperament": "Gentle, Calm, Loyal, Affectionate",
+    "description": "The Pearl Longhair is a soft‑coated breed with a calm demeanor and a strong bond with its family.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS369GQFIv5ZMDQaxBOQEL2Qs8g1b9P0TS1ord2rWWd4A&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-121",
+    "name": "Quartz Shorthair",
+    "origin": "Germany",
+    "temperament": "Intelligent, Calm, Gentle, Loyal",
+    "description": "The Quartz Shorthair is a sturdy European breed known for its calm temperament and intelligence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiLOdQHoErR3sRPW_i-paOBWucKUYCtSfx5FL7Su5H5w&s=10",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["intelligent", "calm", "gentle", "loyal"]
+  },
+  {
+    "id": "breed-122",
+    "name": "Riverine Cat",
+    "origin": "Bangladesh",
+    "temperament": "Active, Curious, Social, Playful",
+    "description": "The Riverine Cat is inspired by wetland felines, known for curiosity and playful behavior.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_rqqeDPdUv9f4W-vh2Fn_nKC2xi_1Xlhobmun4cRXzw&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "social", "playful"]
+  },
+  {
+    "id": "breed-123",
+    "name": "Saffron Longhair",
+    "origin": "India",
+    "temperament": "Gentle, Calm, Affectionate, Quiet",
+    "description": "The Saffron Longhair is a warm‑toned breed with a gentle personality and a preference for quiet homes.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe59ETowLZ7HGbmZsv2crEyV0ymb7EX1lErCWMlYPRHA&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "affectionate", "quiet"]
+  },
+  {
+    "id": "breed-124",
+    "name": "Savanna Curl",
+    "origin": "Kenya",
+    "temperament": "Active, Agile, Curious, Social",
+    "description": "The Savanna Curl is a wild‑inspired breed with curled ears and a highly active personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5zSTqtBxi_yYrSFMcnT_BLKowtkrg6n7eNRdKjt6f3A&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "agile", "curious", "social"]
+  },
+  {
+    "id": "breed-125",
+    "name": "Amberpoint",
+    "origin": "United States",
+    "temperament": "Gentle, Calm, Loyal, Quiet",
+    "description": "Amberpoint cats are known for their warm amber point coloration and calm, affectionate nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_nP6nAnQh-jO2OVn5IMl9jdBl9Bp1-6DcsKxXFEbCQ&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["gentle", "calm", "loyal", "quiet"]
+  },
+  {
+    "id": "breed-126",
+    "name": "Arctic Shorthair",
+    "origin": "Greenland",
+    "temperament": "Independent, Intelligent, Gentle, Calm",
+    "description": "The Arctic Shorthair is adapted to cold climates and known for its thick coat and quiet personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVPEASYvdWlXDDVAZJagQ88x9Gq3rDRXUHQWccjCDauA&s=10",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["independent", "intelligent", "gentle", "calm"]
+  },
+  {
+    "id": "breed-127",
+    "name": "Azure Curl",
+    "origin": "Turkey",
+    "temperament": "Affectionate, Social, Intelligent, Playful",
+    "description": "The Azure Curl is known for its curled ears and bright blue eyes, paired with a loving personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl6NTkgnEaM9TVY9ew8aIG0wut1jGT7jC8W0w1F_4xbA&s",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "6 - 11 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["affectionate", "social", "intelligent", "playful"]
+  },
+  {
+    "id": "breed-128",
+    "name": "Bamboo Cat",
+    "origin": "Vietnam",
+    "temperament": "Active, Curious, Agile, Friendly",
+    "description": "The Bamboo Cat is a jungle‑inspired breed known for agility and a curious, friendly nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC23oxEVdQ4kzUXLbYheEf6ZPbb36gEFl0FzQtB1JrCw&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "friendly"]
+  },
+  {
+    "id": "breed-129",
+    "name": "Blossom Longhair",
+    "origin": "Japan",
+    "temperament": "Gentle, Quiet, Calm, Loyal",
+    "description": "The Blossom Longhair is a serene breed with a soft floral‑patterned coat and a gentle personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyxt6xZ3CVs-o4if8LgXHUq9bm9r3pn7FzPFYFSgLEeQ&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "calm", "loyal"]
+  },
+  {
+    "id": "breed-130",
+    "name": "Breeze Shorthair",
+    "origin": "New Zealand",
+    "temperament": "Playful, Social, Friendly, Intelligent",
+    "description": "The Breeze Shorthair is a coastal breed known for its friendly nature and playful energy.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDfiFd8YF7U5gYLvKnZnndA0OukSTvrKMkMZw5UzIhg&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "social", "friendly", "intelligent"]
+  },
+  {
+    "id": "breed-131",
+    "name": "Canyon Cat",
+    "origin": "United States",
+    "temperament": "Active, Agile, Curious, Independent",
+    "description": "The Canyon Cat is inspired by rugged landscapes and known for its agility and independence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXJO_4nauVfoNQrOJv2xgVXBlALnNeOUlKtJMOHvAU3Q&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "agile", "curious", "independent"]
+  },
+  {
+    "id": "breed-132",
+    "name": "Celestial Rex",
+    "origin": "France",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Celestial Rex is a curly‑coated breed with a lively personality and a love for human interaction.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5I8Izb2NGxt_gp9uTDwutMwLUJVYdx-fZ5rsayXhJRA&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-133",
+    "name": "Cloudtail",
+    "origin": "United Kingdom",
+    "temperament": "Gentle, Calm, Quiet, Loyal",
+    "description": "Cloudtail cats are known for their fluffy coats and peaceful, loyal personalities.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2B8jXiS1e9ayjoYu7SjRaSHAV0AC5lNGg961G-RWnyw&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 15 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "quiet", "loyal"]
+  },
+  {
+    "id": "breed-134",
+    "name": "Coralpoint",
+    "origin": "Australia",
+    "temperament": "Affectionate, Social, Gentle, Calm",
+    "description": "The Coralpoint is a color‑point breed with warm coral tones and a gentle, affectionate nature.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5Sbh-e5Y6qQKG6OCSoLqYgiGyx8IdxPKRr4tizLOTQ&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["affectionate", "social", "gentle", "calm"]
+  },
+  {
+    "id": "breed-135",
+    "name": "Crystal Shorthair",
+    "origin": "Switzerland",
+    "temperament": "Intelligent, Calm, Gentle, Loyal",
+    "description": "The Crystal Shorthair is a sleek European breed known for its calm temperament and intelligence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZH2GTU9wlNrZm6YJER0fEghOjuzcC31RK0HXDQQJQzA&s=10",
+    "details": {
+      "lifespan": "12 - 16 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["intelligent", "calm", "gentle", "loyal"]
+  },
+  {
+    "id": "breed-136",
+    "name": "Dawnmist",
+    "origin": "Norway",
+    "temperament": "Gentle, Quiet, Calm, Intelligent",
+    "description": "Dawnmist cats have soft mist‑colored coats and gentle personalities suited for quiet homes.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpaD0VVYcELF-2po1JkGWCiVc76P5fojbLfpzAtRU4BQ&s",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "calm", "intelligent"]
+  },
+  {
+    "id": "breed-137",
+    "name": "Delta Rex",
+    "origin": "Greece",
+    "temperament": "Playful, Energetic, Social, Intelligent",
+    "description": "The Delta Rex is a curly‑coated breed with a lively personality and a love for interactive play.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGOrYX_kOQKcm3guWvldSNpIUUKJnYzfHUhU8-C9Xdtw&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "energetic", "social", "intelligent"]
+  },
+  {
+    "id": "breed-138",
+    "name": "Desert Pearl",
+    "origin": "Saudi Arabia",
+    "temperament": "Active, Curious, Agile, Independent",
+    "description": "The Desert Pearl is a desert‑adapted breed known for agility and independence.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFSMFpRHbSprVVcq6U0FqBDK5gQnZbEeGaVTwJ0PACaA&s",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["active", "curious", "agile", "independent"]
+  },
+  {
+    "id": "breed-139",
+    "name": "Driftwood Cat",
+    "origin": "Canada",
+    "temperament": "Friendly, Social, Gentle, Calm",
+    "description": "The Driftwood Cat is a coastal breed known for its calm demeanor and friendly personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-NpueKLO7AJTOpj00yJ2QJV5Pp5_qT7Gb7zNkLsj2qw&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 13 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["friendly", "social", "gentle", "calm"]
+  },
+  {
+    "id": "breed-140",
+    "name": "Echo Shorthair",
+    "origin": "Germany",
+    "temperament": "Intelligent, Curious, Social, Playful",
+    "description": "The Echo Shorthair is a sleek breed known for its curiosity and strong social bonds.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9MhPOjOEhXOI5abXW7dcVBe3jPF-loDf08kI8VM_87g&s",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["intelligent", "curious", "social", "playful"]
+  },
+  {
+    "id": "breed-141",
+    "name": "Emberpoint",
+    "origin": "United States",
+    "temperament": "Gentle, Calm, Loyal, Quiet",
+    "description": "The Emberpoint is a color‑point breed with warm ember tones and a peaceful personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSbPYtMg5M7nmi576ZhVAXZnWxQASPQ1AiFgu7gXDOXw&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["gentle", "calm", "loyal", "quiet"]
+  },
+  {
+    "id": "breed-142",
+    "name": "Fable Cat",
+    "origin": "Ireland",
+    "temperament": "Gentle, Quiet, Calm, Loyal",
+    "description": "The Fable Cat is a mythical‑looking breed with a soft coat and a gentle, loyal personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsVXChfYqYzcE7mHRFcTL39SCNJbJyeL5F3PEV59q9iw&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "calm", "loyal"]
+  },
+  {
+    "id": "breed-143",
+    "name": "Flare Rex",
+    "origin": "Italy",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Flare Rex is a curly‑coated breed with a fiery personality and a love for activity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5I8Izb2NGxt_gp9uTDwutMwLUJVYdx-fZ5rsayXhJRA&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-144",
+    "name": "Fogtail",
+    "origin": "United Kingdom",
+    "temperament": "Gentle, Quiet, Calm, Shy",
+    "description": "Fogtail cats have misty gray coats and shy but affectionate personalities.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpaD0VVYcELF-2po1JkGWCiVc76P5fojbLfpzAtRU4BQ&s=10",
+    "details": {
+      "lifespan": "13 - 18 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "quiet", "calm", "shy"]
+  },
+  {
+    "id": "breed-145",
+    "name": "Glacier Cat",
+    "origin": "Iceland",
+    "temperament": "Independent, Intelligent, Gentle, Calm",
+    "description": "The Glacier Cat is adapted to cold climates and known for its thick coat and quiet personality.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5Sbh-e5Y6qQKG6OCSoLqYgiGyx8IdxPKRr4tizLOTQ&s=10",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["independent", "intelligent", "gentle", "calm"]
+  },
+  {
+    "id": "breed-146",
+    "name": "Glowpoint",
+    "origin": "United States",
+    "temperament": "Affectionate, Calm, Gentle, Quiet",
+    "description": "Glowpoint cats have warm glowing point coloration and gentle personalities.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo8wKYHWqx-oRQ1BN1MDpeKQRC4wsx8PgE-KD6E_6LNQ&s",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["affectionate", "calm", "gentle", "quiet"]
+  },
+  {
+    "id": "breed-147",
+    "name": "Glowtail",
+    "origin": "United States",
+    "temperament": "Affectionate, Calm, Gentle, Quiet",
+    "description": "Glowtail cats have warm glowing point coloration and gentle personalities.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsVXChfYqYzcE7mHRFcTL39SCNJbJyeL5F3PEV59q9iw&s=10",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Medium",
+      "groomingLevel": "Low"
+    },
+    "tags": ["affectionate", "calm", "gentle", "quiet"]
+  },
+  {
+    "id": "breed-148",
+    "name": "Gossamer Rex",
+    "origin": "United Kingdom",
+    "temperament": "Energetic, Playful, Social, Intelligent",
+    "description": "The Gossamer Rex is a curly‑coated breed with a lively personality and a love for activity.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGOrYX_kOQKcm3guWvldSNpIUUKJnYzfHUhU8-C9Xdtw&s=10",
+    "details": {
+      "lifespan": "10 - 14 years",
+      "weight": "6 - 10 lbs",
+      "coatType": "Curly",
+      "groomingLevel": "Low"
+    },
+    "tags": ["energetic", "playful", "social", "intelligent"]
+  },
+  {
+    "id": "breed-149",
+    "name": "Horizon Shorthair",
+    "origin": "Australia",
+    "temperament": "Playful, Social, Friendly, Intelligent",
+    "description": "The Horizon Shorthair is a coastal breed known for its friendly nature and playful energy.",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9MhPOjOEhXOI5abXW7dcVBe3jPF-loDf08kI8VM_87g&s=10",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "social", "friendly", "intelligent"]
+  },
+  {
+    "id": "breed-150",
+    "name": "Iridescent Cat",
+    "origin": "Japan",
+    "temperament": "Gentle, Calm, Loyal, Affectionate",
+    "description": "The Iridescent Cat is a soft‑coated breed with a calm demeanor and a strong bond with its family.",
+    "image_url": "https://consumer-cms.petfinder.com/sites/default/files/images/content/Nebelung%20Cat%202.jpg",
+    "details": {
+      "lifespan": "12 - 17 years",
+      "weight": "8 - 14 lbs",
+      "coatType": "Long",
+      "groomingLevel": "High"
+    },
+    "tags": ["gentle", "calm", "loyal", "affectionate"]
+  },
+  {
+    "id": "breed-151",
+    "name": "Jadepoint",
+    "origin": "China",
+    "temperament": "Playful, Social, Intelligent, Curious",
+    "description": "The Jadepoint is a sleek, short‑coated breed known for its intelligence and playful personality.",
+    "image_url": "https://dbw3zep4prcju.cloudfront.net/animal/c8084bc3-da84-474f-a8ed-ced85b033bde/image/24b46104-dbd2-4b1d-a198-cd8fe5af9acb.jpg",
+    "details": {
+      "lifespan": "11 - 15 years",
+      "weight": "7 - 12 lbs",
+      "coatType": "Short",
+      "groomingLevel": "Low"
+    },
+    "tags": ["playful", "social", "intelligent", "curious"]
+  }
+]

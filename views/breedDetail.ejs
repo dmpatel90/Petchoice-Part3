@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<div class="search-section">
+  <p style="margin-bottom:20px;"><a href="/breeds" style="color:#ff914d;">&larr; Back to All Breeds</a></p>
+
+  <div class="details-card">
+    <img
+      src="<%= breed.image_url || 'https://via.placeholder.com/900x400?text=' + encodeURIComponent(breed.name) %>"
+      alt="<%= breed.name %>"
+      onerror="this.src='https://via.placeholder.com/900x400?text=<%= encodeURIComponent(breed.name) %>'"
+    />
+    <h2><%= breed.name %></h2>
+
+    <table class="breed-table">
+      <tr><th>Breed ID</th><td><%= breed.breed_id %></td></tr>
+      <tr><th>Origin</th><td><%= breed.origin %></td></tr>
+      <tr><th>Temperament</th><td><%= breed.temperament %></td></tr>
+      <tr><th>Description</th><td><%= breed.description %></td></tr>
+      <tr><th>Lifespan</th><td><%= breed.lifespan || 'N/A' %></td></tr>
+      <tr><th>Weight</th><td><%= breed.weight || 'N/A' %></td></tr>
+      <tr><th>Coat Type</th><td><%= breed.coat_type || 'N/A' %></td></tr>
+      <tr><th>Grooming Level</th><td><%= breed.grooming_level || 'N/A' %></td></tr>
+      <tr><th>Tags</th><td>
+        <% if (breed.tags && breed.tags.length > 0) { %>
+          <% breed.tags.forEach(function(tag) { %>
+            <span style="display:inline-block;background:#fff0e6;color:#ff914d;border-radius:20px;padding:3px 10px;margin:2px;font-size:13px;font-weight:600;"><%= tag %></span>
+          <% }); %>
+        <% } else { %>
+          N/A
+        <% } %>
+      </td></tr>
+    </table>
+
+    <div style="margin-top:25px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="/breeds/<%= breed.breed_id %>/edit" class="btn">✏️ Edit This Breed</a>
+      <form method="POST" action="/breeds/<%= breed.breed_id %>/delete" onsubmit="return confirm('Are you sure you want to delete <%= breed.name %>? This cannot be undone.')">
+        <button type="submit" style="padding:13px 28px;background:#e53935;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer;transition:.3s;">🗑️ Delete</button>
+      </form>
+      <a href="/api/breeds/<%= breed.breed_id %>" target="_blank" class="btn" style="background:#333;">📡 JSON</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

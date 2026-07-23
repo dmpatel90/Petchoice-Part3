@@ -1,0 +1,85 @@
+<%- include('partials/header') %>
+
+<div class="search-section">
+  <p style="margin-bottom:20px;"><a href="/breeds/<%= breed.breed_id %>" style="color:#ff914d;">&larr; Back to <%= breed.name %></a></p>
+  <h2 style="font-size:28px;margin-bottom:25px;">✏️ Edit – <%= breed.name %></h2>
+
+  <% if (errors && errors.length > 0) { %>
+    <div style="background:#fdecea;color:#c62828;padding:18px 22px;border-radius:10px;margin-bottom:25px;">
+      <strong>Please fix the following:</strong>
+      <ul style="margin-top:8px;padding-left:20px;">
+        <% errors.forEach(function(e) { %><li><%= e %></li><% }); %>
+      </ul>
+    </div>
+  <% } %>
+
+  <div class="controls" style="flex-direction:column;align-items:stretch;max-width:700px;">
+    <form method="POST" action="/breeds/<%= breed.breed_id %>/edit">
+
+      <div style="margin-bottom:18px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Breed Name <span style="color:#e53935">*</span></label>
+        <input type="text" name="name" value="<%= breed.name || '' %>" required style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Origin Country <span style="color:#e53935">*</span></label>
+        <input type="text" name="origin" value="<%= breed.origin || '' %>" required style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Temperament <span style="color:#e53935">*</span></label>
+        <input type="text" name="temperament" value="<%= breed.temperament || '' %>" required style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Description <span style="color:#e53935">*</span></label>
+        <textarea name="description" required rows="4" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;font-family:inherit;"><%= breed.description || '' %></textarea>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;">
+        <div>
+          <label style="font-weight:bold;display:block;margin-bottom:6px;">Lifespan</label>
+          <input type="text" name="lifespan" value="<%= breed.lifespan || '' %>" placeholder="e.g. 12 - 15 years" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+        </div>
+        <div>
+          <label style="font-weight:bold;display:block;margin-bottom:6px;">Weight</label>
+          <input type="text" name="weight" value="<%= breed.weight || '' %>" placeholder="e.g. 8 - 15 lbs" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;">
+        <div>
+          <label style="font-weight:bold;display:block;margin-bottom:6px;">Coat Type</label>
+          <input type="text" name="coat_type" value="<%= breed.coat_type || '' %>" placeholder="e.g. Short, Long, Curly" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+        </div>
+        <div>
+          <label style="font-weight:bold;display:block;margin-bottom:6px;">Grooming Level</label>
+          <select name="grooming_level" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;">
+            <option value="">Select...</option>
+            <option value="Low" <%= breed.grooming_level === 'Low' ? 'selected' : '' %>>Low</option>
+            <option value="Medium" <%= breed.grooming_level === 'Medium' ? 'selected' : '' %>>Medium</option>
+            <option value="High" <%= breed.grooming_level === 'High' ? 'selected' : '' %>>High</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Image URL</label>
+        <input type="url" name="image_url" value="<%= breed.image_url || '' %>" placeholder="https://..." style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+      </div>
+
+      <div style="margin-bottom:25px;">
+        <label style="font-weight:bold;display:block;margin-bottom:6px;">Tags <span style="font-weight:normal;color:#888;">(comma-separated)</span></label>
+        <input type="text" name="tags" value="<%= Array.isArray(breed.tags) ? breed.tags.join(', ') : '' %>" placeholder="e.g. affectionate, playful" style="width:100%;padding:13px;border:2px solid #ddd;border-radius:10px;font-size:16px;" />
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button type="submit" class="btn" style="padding:14px 32px;font-size:16px;">Update Breed</button>
+        <a href="/breeds/<%= breed.breed_id %>" class="btn" style="background:#333;padding:14px 32px;font-size:16px;">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<div class="search-section">
+  <h2 style="font-size:28px;margin-bottom:25px;">🔍 Search Cat Breeds</h2>
+
+  <form method="GET" action="/breeds/search">
+    <div class="controls">
+      <input type="text" name="keyword" value="<%= keyword || '' %>" placeholder="Search by name, temperament, or description..." />
+      <select name="origin">
+        <option value="">All Origins</option>
+        <% origins.forEach(function(o) { %>
+          <option value="<%= o %>" <%= origin === o ? 'selected' : '' %>><%= o %></option>
+        <% }); %>
+      </select>
+      <select name="grooming">
+        <option value="">All Grooming Levels</option>
+        <option value="Low" <%= grooming === 'Low' ? 'selected' : '' %>>Low</option>
+        <option value="Medium" <%= grooming === 'Medium' ? 'selected' : '' %>>Medium</option>
+        <option value="High" <%= grooming === 'High' ? 'selected' : '' %>>High</option>
+      </select>
+      <button type="submit">Search</button>
+      <a href="/breeds/search" class="btn" style="background:#333;">Reset</a>
+    </div>
+  </form>
+
+  <% if (error) { %>
+    <div class="no-results">⚠️ <%= error %></div>
+  <% } %>
+
+  <% if (results !== null) { %>
+    <% if (results.length === 0) { %>
+      <div class="no-results">
+        😿 No breeds found<% if (keyword) { %> matching "<strong><%= keyword %></strong>"<% } %>.
+        Try a different keyword or filter.
+      </div>
+    <% } else { %>
+      <div class="search-results"><%= results.length %> breed<%= results.length !== 1 ? 's' : '' %> found</div>
+      <div id="catsContainer">
+        <% results.forEach(function(breed) { %>
+        <div class="card">
+          <img
+            src="<%= breed.image_url || 'https://via.placeholder.com/400x250?text=' + encodeURIComponent(breed.name) %>"
+            alt="<%= breed.name %>"
+            onerror="this.src='https://via.placeholder.com/400x250?text=<%= encodeURIComponent(breed.name) %>'"
+          />
+          <div class="card-content">
+            <h3><%= breed.name %></h3>
+            <p><strong>Origin:</strong> <%= breed.origin %></p>
+            <p><strong>Grooming:</strong> <%= breed.grooming_level || 'N/A' %></p>
+            <p><strong>Lifespan:</strong> <%= breed.lifespan || 'N/A' %></p>
+            <p><%= breed.description ? breed.description.substring(0, 100) + '...' : '' %></p>
+            <div style="margin-top:15px;display:flex;gap:10px;">
+              <a href="/breeds/<%= breed.breed_id %>" class="btn" style="padding:8px 16px;font-size:14px;">View</a>
+              <a href="/breeds/<%= breed.breed_id %>/edit" class="btn" style="padding:8px 16px;font-size:14px;background:#333;">Edit</a>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    <% } %>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

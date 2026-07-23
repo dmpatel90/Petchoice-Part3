@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2>Find Your Perfect <span style="color:#ff914d">Feline</span> Companion</h2>
+      <p>Explore <%= total %> cat breeds — search by temperament, origin, or grooming needs. Now powered by a live PostgreSQL database.</p>
+      <a href="/breeds" class="btn">Browse All Breeds</a>
+      <a href="/breeds/search" class="btn" style="margin-left:12px;background:#333;">Search Breeds</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn2.thecatapi.com/images/OOD3VXAPs.jpg" alt="Cat breed hero" />
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><h2><%= total %></h2><p>Breeds in Database</p></div>
+  <div class="stat"><h2>30+</h2><p>Countries of Origin</p></div>
+  <div class="stat"><h2>CRUD</h2><p>Full Database Operations</p></div>
+  <div class="stat"><h2>Live</h2><p>Deployed on Vercel</p></div>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <h3>🔍 Search & Filter</h3>
+    <p>Search breeds by name, temperament, or description. Filter by origin country or grooming level.</p>
+    <a href="/breeds/search" class="btn" style="margin-top:15px">Search Now</a>
+  </div>
+  <div class="feature-card">
+    <h3>➕ Add a Breed</h3>
+    <p>Add a new cat breed directly to the PostgreSQL database using our validated insert form.</p>
+    <a href="/breeds/add" class="btn" style="margin-top:15px">Add Breed</a>
+  </div>
+  <div class="feature-card">
+    <h3>📡 JSON API</h3>
+    <p>Access all breed data as JSON through our REST API routes for developer and testing use.</p>
+    <a href="/api/breeds" target="_blank" class="btn" style="margin-top:15px">View API</a>
+  </div>
+</div>
+
+<div class="about">
+  <h2 class="about-title">About PetChoice</h2>
+  <div class="about-card">
+    <p>PetChoice is a WEB700 Project Part 3 application. It extends the Part 2 Express backend by replacing the local JSON dataset with a shared <strong>Neon PostgreSQL</strong> database accessed through <strong>Sequelize</strong>. The app supports full CRUD operations and is deployed on Vercel.</p>
+    <br/>
+    <p><strong>Part 1</strong> — Front-end prototype consuming The Cat API &nbsp;|&nbsp; <strong>Part 2</strong> — Express backend with local JSON &nbsp;|&nbsp; <strong>Part 3</strong> — PostgreSQL, CRUD, and deployment</p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
