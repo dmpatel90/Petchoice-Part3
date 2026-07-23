@@ -3,55 +3,48 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const Breed = sequelize.define("Breed", {
-
-    id: {
-        type: DataTypes.STRING,
-        primaryKey: true
+const Breed = sequelize.define(
+  "Breed",
+  {
+    breed_id: {
+      type: DataTypes.STRING,
+      primaryKey: true
     },
-
     name: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING
     },
-
     origin: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
-
     temperament: {
-        type: DataTypes.TEXT
+      type: DataTypes.TEXT
     },
-
     description: {
-        type: DataTypes.TEXT
+      type: DataTypes.TEXT
     },
-
     image_url: {
-        type: DataTypes.TEXT
+      type: DataTypes.TEXT
     },
-
     lifespan: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
-
     weight: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
-
-    coatType: {
-        type: DataTypes.STRING
+    coat_type: {
+      type: DataTypes.STRING
     },
-
-    groomingLevel: {
-        type: DataTypes.STRING
+    grooming_level: {
+      type: DataTypes.STRING
+    },
+    tags: {
+      type: DataTypes.ARRAY(DataTypes.TEXT)
     }
-
-}, {
-
+  },
+  {
     tableName: "breeds",
     timestamps: false
-
-});
+  }
+);
 
 module.exports = Breed;
