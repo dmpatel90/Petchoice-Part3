@@ -1,0 +1,287 @@
+<%- include("partials/header", { title: "Edit Breed" }) %>
+
+<h1 class="mb-4 text-center">
+    Edit Breed
+</h1>
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <form action="/breeds/<%= breed.id %>/edit" method="POST">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <!-- Breed ID -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Breed ID
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            value="<%= breed.id %>"
+                            readonly>
+
+                    </div>
+
+                    <!-- Name -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Breed Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            value="<%= breed.name %>"
+                            required>
+
+                    </div>
+
+                    <!-- Origin -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Origin
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="origin"
+                            class="form-control"
+                            value="<%= breed.origin %>"
+                            required>
+
+                    </div>
+
+                    <!-- Temperament -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Temperament
+
+                        </label>
+
+                        <textarea
+                            name="temperament"
+                            class="form-control"
+                            rows="3"
+                            required><%= breed.temperament %></textarea>
+
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Description
+
+                        </label>
+
+                        <textarea
+                            name="description"
+                            class="form-control"
+                            rows="5"
+                            required><%= breed.description %></textarea>
+
+                    </div>
+
+                    <!-- Image URL -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Image URL
+
+                        </label>
+
+                        <input
+                            type="url"
+                            name="imageUrl"
+                            class="form-control"
+                            value="<%= breed.imageUrl %>"
+                            required>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Lifespan
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="lifespan"
+                                    class="form-control"
+                                    value="<%= breed.lifespan %>"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Weight
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="weight"
+                                    class="form-control"
+                                    value="<%= breed.weight %>"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Coat Type
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="coatType"
+                                    class="form-control"
+                                    value="<%= breed.coatType %>"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+
+                                    Grooming Level
+
+                                </label>
+
+                                <select
+                                    name="groomingLevel"
+                                    class="form-select">
+
+                                    <option value="Low"
+                                        <%= breed.groomingLevel === "Low" ? "selected" : "" %>>
+                                        Low
+                                    </option>
+
+                                    <option value="Medium"
+                                        <%= breed.groomingLevel === "Medium" ? "selected" : "" %>>
+                                        Medium
+                                    </option>
+
+                                    <option value="High"
+                                        <%= breed.groomingLevel === "High" ? "selected" : "" %>>
+                                        High
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tags -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Tags
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="tags"
+                            class="form-control"
+                            value="<%= breed.tags ? breed.tags.join(', ') : '' %>">
+
+                        <small class="text-muted">
+
+                            Separate multiple tags with commas.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button
+                        class="btn btn-success">
+
+                        Update Breed
+
+                    </button>
+
+                    <a
+                        href="/breeds/<%= breed.id %>"
+                        class="btn btn-secondary">
+
+                        Cancel
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>

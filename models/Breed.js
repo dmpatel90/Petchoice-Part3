@@ -1,44 +1,67 @@
-"use strict";
-
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
 const Breed = sequelize.define(
   "Breed",
   {
-    breed_id: {
+    id: {
       type: DataTypes.STRING,
-      primaryKey: true
+      primaryKey: true,
+      allowNull: false
     },
+
     name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
+
     origin: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
+
     temperament: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      allowNull: false
     },
+
     description: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
+      allowNull: false
     },
-    image_url: {
-      type: DataTypes.TEXT
+
+    imageUrl: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      field: "image_url"
     },
+
     lifespan: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
+
     weight: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    coat_type: {
-      type: DataTypes.STRING
+
+    coatType: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "coat_type"
     },
-    grooming_level: {
-      type: DataTypes.STRING
+
+    groomingLevel: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      field: "grooming_level"
     },
+
     tags: {
-      type: DataTypes.ARRAY(DataTypes.TEXT)
+      type: DataTypes.JSONB,
+      allowNull: false,
+      defaultValue: []
     }
   },
   {

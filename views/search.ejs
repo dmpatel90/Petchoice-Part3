@@ -1,0 +1,113 @@
+<%- include("partials/header", { title: "Search Breeds" }) %>
+
+<h1 class="mb-4 text-center">
+    Search Breeds
+</h1>
+
+<form action="/search" method="GET" class="mb-5">
+
+    <div class="row">
+
+        <div class="col-md-10">
+
+            <input
+                type="text"
+                name="q"
+                class="form-control"
+                placeholder="Search by breed name or origin..."
+                value="<%= req.query.q || '' %>">
+
+        </div>
+
+        <div class="col-md-2">
+
+            <button
+                class="btn btn-primary w-100">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+</form>
+
+<% if (typeof breeds !== "undefined") { %>
+
+    <% if (breeds.length === 0) { %>
+
+        <div class="alert alert-warning">
+
+            No breeds found.
+
+        </div>
+
+    <% } else { %>
+
+        <div class="row">
+
+            <% breeds.forEach(breed => { %>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <img
+                            src="<%= breed.imageUrl %>"
+                            class="card-img-top"
+                            alt="<%= breed.name %>"
+                            style="height:220px; object-fit:cover;">
+
+                        <div class="card-body">
+
+                            <h4>
+
+                                <%= breed.name %>
+
+                            </h4>
+
+                            <p>
+
+                                <strong>Origin:</strong>
+
+                                <%= breed.origin %>
+
+                            </p>
+
+                            <p>
+
+                                <strong>Temperament:</strong>
+
+                                <%= breed.temperament %>
+
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white">
+
+                            <a
+                                href="/breeds/<%= breed.id %>"
+                                class="btn btn-primary w-100">
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    <% } %>
+
+<% } %>
+
+<%- include("partials/footer") %>

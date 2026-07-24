@@ -1,0 +1,198 @@
+<%- include("partials/header", { title: "Add Breed" }) %>
+
+<h1 class="mb-4 text-center">
+    Add New Breed
+</h1>
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <form action="/breeds/add" method="POST">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Breed ID</label>
+
+                        <input
+                            type="text"
+                            name="id"
+                            class="form-control"
+                            placeholder="breed-152"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Breed Name</label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Origin</label>
+
+                        <input
+                            type="text"
+                            name="origin"
+                            class="form-control"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Temperament</label>
+
+                        <textarea
+                            name="temperament"
+                            class="form-control"
+                            rows="3"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+
+                        <textarea
+                            name="description"
+                            class="form-control"
+                            rows="5"
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Image URL</label>
+
+                        <input
+                            type="url"
+                            name="imageUrl"
+                            class="form-control"
+                            placeholder="https://..."
+                            required>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Lifespan
+                            </label>
+
+                            <input
+                                type="text"
+                                name="lifespan"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Weight
+                            </label>
+
+                            <input
+                                type="text"
+                                name="weight"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Coat Type
+                            </label>
+
+                            <input
+                                type="text"
+                                name="coatType"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <label class="form-label">
+                                Grooming Level
+                            </label>
+
+                            <select
+                                name="groomingLevel"
+                                class="form-select">
+
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Tags
+
+                        </label>
+
+                        <input
+                            type="text"
+                            name="tags"
+                            class="form-control"
+                            placeholder="Friendly, Active, Intelligent">
+
+                        <small class="text-muted">
+
+                            Separate tags with commas.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <button
+                        class="btn btn-success">
+
+                        Save Breed
+
+                    </button>
+
+                    <a
+                        href="/breeds"
+                        class="btn btn-secondary">
+
+                        Cancel
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>

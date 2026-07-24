@@ -1,0 +1,104 @@
+<%- include("partials/header", { title: breed.name }) %>
+
+<div class="row">
+
+    <div class="col-lg-5">
+
+        <img
+            src="<%= breed.imageUrl %>"
+            alt="<%= breed.name %>"
+            class="img-fluid rounded shadow">
+
+    </div>
+
+    <div class="col-lg-7">
+
+        <h1 class="mb-3">
+            <%= breed.name %>
+        </h1>
+
+        <p class="lead">
+            <%= breed.description %>
+        </p>
+
+        <hr>
+
+        <table class="table table-striped">
+
+            <tr>
+                <th width="220">Origin</th>
+                <td><%= breed.origin %></td>
+            </tr>
+
+            <tr>
+                <th>Temperament</th>
+                <td><%= breed.temperament %></td>
+            </tr>
+
+            <tr>
+                <th>Lifespan</th>
+                <td><%= breed.lifespan %></td>
+            </tr>
+
+            <tr>
+                <th>Weight</th>
+                <td><%= breed.weight %></td>
+            </tr>
+
+            <tr>
+                <th>Coat Type</th>
+                <td><%= breed.coatType %></td>
+            </tr>
+
+            <tr>
+                <th>Grooming Level</th>
+                <td><%= breed.groomingLevel %></td>
+            </tr>
+
+        </table>
+
+        <h5 class="mt-4">
+            Tags
+        </h5>
+
+        <% if (breed.tags && breed.tags.length > 0) { %>
+
+            <% breed.tags.forEach(tag => { %>
+
+                <span class="badge bg-primary me-2 mb-2">
+                    <%= tag %>
+                </span>
+
+            <% }) %>
+
+        <% } else { %>
+
+            <p class="text-muted">
+                No tags available.
+            </p>
+
+        <% } %>
+
+        <hr>
+
+        <a
+            href="/breeds/<%= breed.id %>/edit"
+            class="btn btn-warning">
+
+            Edit Breed
+
+        </a>
+
+        <a
+            href="/breeds"
+            class="btn btn-secondary">
+
+            Back to Breeds
+
+        </a>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>
