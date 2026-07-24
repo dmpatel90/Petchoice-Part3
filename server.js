@@ -561,22 +561,10 @@ async function startServer() {
 
         await sequelize.sync();
 
-        app.listen(PORT, () => {
-
-            console.log(`🚀 Server running on http://localhost:${PORT}`);
-
-        });
-
-    }
-
-    catch (err) {
-
-        console.error("❌ Failed to start application");
-
-        console.error(err);
-
-    }
-
-}
-
-startServer();
+    app.listen(PORT, () => {
+      console.log(`✅ Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("❌ Database connection error:", err);
+  });
