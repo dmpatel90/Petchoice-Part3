@@ -335,9 +335,9 @@ https://YOUR-VERCEL-PROJECT.vercel.app / Not yet deployed
 
 | Team Member | Contributions |
 |--------------|--------------|
-| Ebuka Precious | Project architecture, Express server, PostgreSQL integration, Sequelize model, CRUD routes, REST API, debugging, documentation |
-| Team Member 2 | Update with actual contributions |
-| Team Member 3 | Update with actual contributions |
+| Ebuka Precious Akaegbusi | Project architecture, Express server, PostgreSQL integration, Sequelize model, CRUD routes, REST API, debugging, documentation |
+| Devkumar Manishkumar Patel| Project architecture, Express server, PostgreSQL integration, Sequelize model |
+
 
 ---
 
