@@ -589,8 +589,6 @@ async function initialize() {
 
         console.log("✅ Connected to Neon PostgreSQL");
 
-        await sequelize.sync();
-
     } catch (err) {
 
         console.error("❌ Database initialization failed");
