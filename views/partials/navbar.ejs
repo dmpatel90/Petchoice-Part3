@@ -1,0 +1,48 @@
+<header class="site-header">
+
+    <div class="nav-inner">
+
+        <a class="brand" href="/">
+
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="24" cy="30" rx="13" ry="11" fill="currentColor"/>
+                    <ellipse cx="9" cy="16" rx="5" ry="6.5" fill="currentColor"/>
+                    <ellipse cx="20" cy="9" rx="4.5" ry="6" fill="currentColor"/>
+                    <ellipse cx="32" cy="9" rx="4.5" ry="6" fill="currentColor"/>
+                    <ellipse cx="41" cy="17" rx="4.5" ry="6" fill="currentColor" transform="rotate(20 41 17)"/>
+                </svg>
+            </span>
+
+            <span class="brand-text">Pet Choice</span>
+
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-label="Toggle navigation">
+
+            <span></span><span></span><span></span>
+
+        </button>
+
+        <nav class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="nav-links">
+
+                <li><a href="/" class="<%= typeof req !== 'undefined' && req.path === '/' ? 'active' : '' %>">Home</a></li>
+                <li><a href="/breeds" class="<%= typeof req !== 'undefined' && req.path.startsWith('/breeds') && req.path !== '/breeds/add' ? 'active' : '' %>">Breed Catalog</a></li>
+                <li><a href="/breeds/add" class="<%= typeof req !== 'undefined' && req.path === '/breeds/add' ? 'active' : '' %>">Add Breed</a></li>
+                <li><a href="/search" class="<%= typeof req !== 'undefined' && req.path === '/search' ? 'active' : '' %>">Search</a></li>
+                <li><a href="/about" class="<%= typeof req !== 'undefined' && req.path === '/about' ? 'active' : '' %>">About</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>

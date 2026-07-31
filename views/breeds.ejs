@@ -1,127 +1,246 @@
-<%- include("partials/header", { title: title }) %>
+<%- include("partials/header", { title: "Cat Breeds" }) %>
 
-<h1 class="mb-4 text-center">
-    All Cat Breeds
-</h1>
+<section class="page-hero page-hero--image">
 
-<% if (breeds.length === 0) { %>
+    <div class="page-hero-inner">
 
-<div class="alert alert-warning text-center">
-    No breeds found.
-</div>
+        <p class="eyebrow eyebrow--light">The Catalog</p>
 
-<% } else { %>
+        <h1>Discover your perfect cat breed</h1>
 
-<div class="row">
+        <p>Compare personalities, lifespan, origin, and characteristics to find a cat that matches your lifestyle.</p>
 
-<% breeds.forEach(breed => { %>
+    </div>
 
-<div class="col-lg-4 col-md-6 mb-4">
+</section>
 
-    <div class="card h-100 shadow-sm">
+<section class="content-section breeds-section">
 
-        <img
-            src="<%= breed.imageUrl %>"
-            class="card-img-top"
-            alt="<%= breed.name %>"
-            style="height:250px; object-fit:cover;">
+    <div class="filter-bar" id="filterBar">
 
-        <div class="card-body">
+        <div class="filter-field filter-search">
 
-            <h4 class="card-title">
-                <%= breed.name %>
-            </h4>
+            <span class="filter-icon">🔍</span>
 
-            <p class="text-muted">
-                <strong>Origin:</strong>
-                <%= breed.origin %>
-            </p>
-
-            <p>
-                <strong>Lifespan:</strong>
-                <%= breed.lifespan %>
-            </p>
-
-            <p>
-                <strong>Weight:</strong>
-                <%= breed.weight %>
-            </p>
-
-            <p>
-                <strong>Coat:</strong>
-                <%= breed.coatType %>
-            </p>
-
-            <p>
-                <strong>Grooming:</strong>
-                <%= breed.groomingLevel %>
-            </p>
-
-            <p>
-
-                <% if (breed.tags && breed.tags.length) { %>
-
-                    <% breed.tags.forEach(tag => { %>
-
-                        <span class="badge bg-primary me-1">
-                            <%= tag %>
-                        </span>
-
-                    <% }) %>
-
-                <% } %>
-
-            </p>
+            <input type="text" id="filterSearch" placeholder="Search breed...">
 
         </div>
 
-        <div class="card-footer bg-white">
+        <div class="filter-field">
 
-            <div class="d-grid gap-2">
+            <select id="filterOrigin">
+                <option value="">All Origins</option>
+            </select>
 
-                <a
-                    href="/breeds/<%= breed.id %>"
-                    class="btn btn-primary">
+        </div>
 
-                    View Details
+        <div class="filter-field">
 
-                </a>
+            <select id="filterSort">
+                <option value="">Sort Breeds</option>
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="origin-asc">Origin (A-Z)</option>
+            </select>
 
-                <a
-                    href="/breeds/<%= breed.id %>/edit"
-                    class="btn btn-warning">
+        </div>
 
-                    Edit
+        <button type="button" class="btn btn-reset" id="filterReset">Reset</button>
 
-                </a>
+    </div>
 
-                <form
-                    action="/breeds/<%= breed.id %>/delete"
-                    method="POST">
+    <div class="results-bar">
 
-                    <button
-                        type="submit"
-                        class="btn btn-danger w-100"
-                        onclick="return confirm('Delete this breed?')">
+        <p class="results-count" id="resultsCount">
+            Showing <strong><%= breeds.length %></strong> breed<%= breeds.length !== 1 ? "s" : "" %>
+        </p>
 
-                        Delete
+        <a href="/breeds/add" class="btn btn-clay btn-add">+ Add Breed</a>
 
-                    </button>
+    </div>
 
-                </form>
+<% if (breeds.length === 0) { %>
+
+    <div class="empty-state">
+        <div class="empty-emoji">😿</div>
+        <h3>No cat breeds available</h3>
+        <p>Check back soon or add the first breed to the database.</p>
+        <a href="/breeds/add" class="btn btn-primary">Add a Breed</a>
+    </div>
+
+<% } else { %>
+
+    <div class="row g-4" id="breedGrid">
+
+    <% breeds.forEach((breed) => { %>
+
+        <div class="col-xl-4 col-lg-4 col-md-6 breed-col" data-name="<%= breed.name.toLowerCase() %>" data-origin="<%= breed.origin %>">
+
+            <div class="card breed-card h-100">
+
+                <div class="image-wrapper">
+
+                    <img
+                        src="<%= breed.imageUrl %>"
+                        class="card-img-top"
+                        alt="<%= breed.name %>">
+
+                </div>
+
+                <div class="card-body d-flex flex-column">
+
+                    <p class="specimen-meta">🌍 <%= breed.origin %></p>
+
+                    <h3 class="card-title mb-2"><%= breed.name %></h3>
+
+                    <p class="card-text">
+                        <%= breed.description.length > 120
+                            ? breed.description.substring(0,120) + "..."
+                            : breed.description %>
+                    </p>
+
+                    <p class="specimen-label">Temperament</p>
+
+                    <p class="text-muted small mb-3"><%= breed.temperament %></p>
+
+                    <div class="mt-auto">
+
+                        <% if (breed.tags && breed.tags.length) { %>
+                            <% breed.tags.forEach(tag => { %>
+                                <span class="tag"><%= tag %></span>
+                            <% }) %>
+                        <% } %>
+
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+
+                    <div class="card-actions">
+
+                        <a href="/breeds/<%= breed.id %>" class="btn btn-primary">View</a>
+                        <a href="/breeds/<%= breed.id %>/edit" class="btn btn-warning">Edit</a>
+
+                        <form action="/breeds/<%= breed.id %>/delete" method="POST" class="d-inline">
+                            <button
+                                class="btn btn-danger"
+                                onclick="return confirm('Delete this breed?')"
+                                type="submit">
+                                Delete
+                            </button>
+                        </form>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
+    <% }) %>
+
     </div>
 
-</div>
-
-<% }) %>
-
-</div>
+    <p class="results-count empty-filter-message" id="noResultsMessage" style="display:none;">
+        No breeds match your filters. <button type="button" id="filterResetInline" class="link-reset">Clear filters</button>
+    </p>
 
 <% } %>
+
+</section>
+
+<script>
+(function () {
+
+    const cards = Array.from(document.querySelectorAll(".breed-col"));
+    const grid = document.getElementById("breedGrid");
+    const searchInput = document.getElementById("filterSearch");
+    const originSelect = document.getElementById("filterOrigin");
+    const sortSelect = document.getElementById("filterSort");
+    const resetBtn = document.getElementById("filterReset");
+    const resetInlineBtn = document.getElementById("filterResetInline");
+    const resultsCount = document.getElementById("resultsCount");
+    const noResultsMessage = document.getElementById("noResultsMessage");
+
+    if (!cards.length) return;
+
+    const origins = [...new Set(cards.map(c => c.dataset.origin))].sort();
+
+    origins.forEach(origin => {
+        const opt = document.createElement("option");
+        opt.value = origin;
+        opt.textContent = origin;
+        originSelect.appendChild(opt);
+    });
+
+    function applyFilters() {
+
+        const term = searchInput.value.trim().toLowerCase();
+        const origin = originSelect.value;
+        let visible = 0;
+
+        cards.forEach(card => {
+
+            const matchesTerm = card.dataset.name.includes(term);
+            const matchesOrigin = !origin || card.dataset.origin === origin;
+            const show = matchesTerm && matchesOrigin;
+
+            card.style.display = show ? "" : "none";
+
+            if (show) visible++;
+
+        });
+
+        resultsCount.innerHTML = "Showing <strong>" + visible + "</strong> breed" + (visible !== 1 ? "s" : "");
+        noResultsMessage.style.display = visible === 0 ? "block" : "none";
+
+        applySort();
+
+    }
+
+    function applySort() {
+
+        const value = sortSelect.value;
+
+        if (!value) return;
+
+        const [key, dir] = value.split("-");
+
+        const sorted = cards.slice().sort((a, b) => {
+
+            const av = key === "name" ? a.dataset.name : a.dataset.origin.toLowerCase();
+            const bv = key === "name" ? b.dataset.name : b.dataset.origin.toLowerCase();
+
+            return dir === "asc" ? av.localeCompare(bv) : bv.localeCompare(av);
+
+        });
+
+        sorted.forEach(card => grid.appendChild(card));
+
+    }
+
+    function resetFilters() {
+
+        searchInput.value = "";
+        originSelect.value = "";
+        sortSelect.value = "";
+
+        applyFilters();
+
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    originSelect.addEventListener("change", applyFilters);
+    sortSelect.addEventListener("change", applyFilters);
+    resetBtn.addEventListener("click", resetFilters);
+
+    if (resetInlineBtn) {
+        resetInlineBtn.addEventListener("click", resetFilters);
+    }
+
+})();
+</script>
 
 <%- include("partials/footer") %>

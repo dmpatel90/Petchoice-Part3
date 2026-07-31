@@ -1,49 +1,182 @@
-<%- include("partials/header", { title: title }) %>
+<%- include("partials/header", { title: "Home" }) %>
 
-<div class="text-center py-5">
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
 
-    <h1 class="display-4">
+<section class="hero">
 
-        Welcome to PetChoice
+    <div class="hero-grid">
 
-    </h1>
+        <div class="hero-copy">
 
-    <p class="lead">
+            <p class="eyebrow">Field Guide — No. 01 Edition</p>
 
-        Browse and manage your pet breed collection.
+            <h1>Find your<br>perfect <em>cat</em><br>breed</h1>
 
-    </p>
-
-    <div class="card shadow mt-4 mx-auto" style="max-width:400px">
-
-        <div class="card-body">
-
-            <h2 class="display-5">
-
-                <%= total %>
-
-            </h2>
-
-            <p class="text-muted">
-
-                Breeds in Database
-
+            <p class="hero-lede">
+                A living catalog of the world's cat breeds — their origins,
+                temperaments, and quirks — built so you can find the one
+                that actually fits your life.
             </p>
+
+            <div class="hero-actions">
+
+                <a href="/breeds" class="btn btn-clay btn-lg">Browse the Catalog</a>
+                <a href="/search" class="btn btn-outline-ink btn-lg">Search Breeds</a>
+
+            </div>
+
+            <div class="hero-stats-inline">
+
+                <div><span><%= total %></span><small>Breeds catalogued</small></div>
+                <div><span>PostgreSQL</span><small>Backed & queryable</small></div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-art">
+
+            <div class="hero-blob">
+                <img src="/images/banner-image.png" alt="Cats being cared for">
+            </div>
+
+            <svg class="hero-paws" viewBox="0 0 200 200" aria-hidden="true">
+                <g fill="currentColor" opacity=".55">
+                    <ellipse cx="30" cy="150" rx="9" ry="7"/>
+                    <ellipse cx="18" cy="135" rx="4" ry="5"/>
+                    <ellipse cx="30" cy="130" rx="4" ry="5.5"/>
+                    <ellipse cx="42" cy="135" rx="4" ry="5"/>
+                </g>
+                <g fill="currentColor" opacity=".35">
+                    <ellipse cx="170" cy="40" rx="9" ry="7" transform="rotate(25 170 40)"/>
+                    <ellipse cx="158" cy="26" rx="4" ry="5" transform="rotate(25 158 26)"/>
+                    <ellipse cx="170" cy="21" rx="4" ry="5.5" transform="rotate(25 170 21)"/>
+                    <ellipse cx="182" cy="26" rx="4" ry="5" transform="rotate(25 182 26)"/>
+                </g>
+            </svg>
 
         </div>
 
     </div>
 
-    <div class="mt-5">
+</section>
 
-        <a href="/breeds" class="btn btn-primary btn-lg">
+<!-- ==========================================
+     STATISTICS — dark band
+========================================== -->
 
-            View All Breeds
+<section class="stats-band">
 
-        </a>
+    <div class="stats">
+
+        <div class="stat">
+            <h2><%= total %></h2>
+            <p>Cat breeds</p>
+        </div>
+
+        <div class="stat">
+            <h2>CRUD</h2>
+            <p>Full record management</p>
+        </div>
+
+        <div class="stat">
+            <h2>100%</h2>
+            <p>PostgreSQL powered</p>
+        </div>
 
     </div>
 
-</div>
+</section>
+
+<!-- ==========================================
+     FEATURES
+========================================== -->
+
+<section class="content-section">
+
+    <div class="section-title">
+        <p class="eyebrow">What's inside</p>
+        <h2>Everything you need to choose well</h2>
+        <p>Find, compare, and manage cat breeds — all in one field guide.</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon">🐱</div>
+            <h3>Browse the Catalog</h3>
+            <p>Explore a growing collection of cat breeds and their unique characteristics, personalities, and origins.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Advanced Search</h3>
+            <p>Search breeds by name, origin, temperament, coat type, and grooming level.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">✎</div>
+            <h3>Manage Records</h3>
+            <p>Add, edit, update, and delete cat breeds using the PostgreSQL database.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     ABOUT — pull quote band
+========================================== -->
+
+<section class="content-section">
+
+    <div class="pull-quote">
+
+        <p>&ldquo;Pet Choice was built to help cat lovers explore breeds stored in a
+        real database — browse, search with multiple filters, and manage full
+        breed records through create, read, update, and delete.&rdquo;</p>
+
+        <a href="/about" class="pull-quote-link">Read the full story →</a>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     QUICK FACTS
+========================================== -->
+
+<section class="content-section">
+
+    <div class="section-title">
+        <p class="eyebrow">Every profile includes</p>
+        <h2>Quick facts, at a glance</h2>
+    </div>
+
+    <div class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon">🌎</div>
+            <h3>Worldwide Breeds</h3>
+            <p>Learn about cat breeds from different countries, including their history and origin.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🛁</div>
+            <h3>Grooming Notes</h3>
+            <p>Find out each breed's coat type, grooming needs, and care requirements.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📖</div>
+            <h3>Detailed Profiles</h3>
+            <p>View temperament, lifespan, weight, and full descriptions for every breed.</p>
+        </div>
+
+    </div>
+
+</section>
 
 <%- include("partials/footer") %>

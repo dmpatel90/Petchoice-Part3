@@ -1,101 +1,161 @@
 <%- include("partials/header", { title: breed.name }) %>
 
-<div class="row">
+<div class="row align-items-center g-5">
 
     <div class="col-lg-5">
 
         <img
             src="<%= breed.imageUrl %>"
-            alt="<%= breed.name %>"
-            class="img-fluid rounded shadow">
+            class="img-fluid breed-details-image"
+            alt="<%= breed.name %>">
 
     </div>
 
     <div class="col-lg-7">
 
-        <h1 class="mb-3">
+        <p class="eyebrow">Breed Profile</p>
+
+        <h1 class="display-4 fw-bold">
+
             <%= breed.name %>
+
         </h1>
 
-        <p class="lead">
+        <p class="lead text-primary fw-semibold">
+
+            🌍 <%= breed.origin %>
+
+        </p>
+
+        <p class="mt-4">
+
             <%= breed.description %>
+
         </p>
 
         <hr>
 
-        <table class="table table-striped">
+        <div class="row g-3">
 
-            <tr>
-                <th width="220">Origin</th>
-                <td><%= breed.origin %></td>
-            </tr>
+            <div class="col-md-6">
 
-            <tr>
-                <th>Temperament</th>
-                <td><%= breed.temperament %></td>
-            </tr>
+                <div class="info-card">
 
-            <tr>
-                <th>Lifespan</th>
-                <td><%= breed.lifespan %></td>
-            </tr>
+                    <h6>🐾 Temperament</h6>
 
-            <tr>
-                <th>Weight</th>
-                <td><%= breed.weight %></td>
-            </tr>
+                    <p><%= breed.temperament %></p>
 
-            <tr>
-                <th>Coat Type</th>
-                <td><%= breed.coatType %></td>
-            </tr>
+                </div>
 
-            <tr>
-                <th>Grooming Level</th>
-                <td><%= breed.groomingLevel %></td>
-            </tr>
+            </div>
 
-        </table>
+            <div class="col-md-6">
 
-        <h5 class="mt-4">
-            Tags
-        </h5>
+                <div class="info-card">
 
-        <% if (breed.tags && breed.tags.length > 0) { %>
+                    <h6>⏳ Lifespan</h6>
+
+                    <p><%= breed.lifespan %></p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="info-card">
+
+                    <h6>⚖ Weight</h6>
+
+                    <p><%= breed.weight %></p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="info-card">
+
+                    <h6>🧶 Coat Type</h6>
+
+                    <p><%= breed.coatType %></p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="info-card">
+
+                    <h6>🪮 Grooming</h6>
+
+                    <p><%= breed.groomingLevel %></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <% if (breed.tags && breed.tags.length) { %>
+
+        <div class="mt-4">
+
+            <h5 class="mb-3">
+
+                Tags
+
+            </h5>
 
             <% breed.tags.forEach(tag => { %>
 
-                <span class="badge bg-primary me-2 mb-2">
+                <span class="tag">
+
                     <%= tag %>
+
                 </span>
 
             <% }) %>
 
-        <% } else { %>
-
-            <p class="text-muted">
-                No tags available.
-            </p>
+        </div>
 
         <% } %>
 
-        <hr>
+        <div class="mt-5 d-flex flex-wrap gap-3">
 
-        <a
-            href="/breeds/<%= breed.id %>/edit"
-            class="btn btn-warning">
+            <a
+                href="/breeds"
+                class="btn btn-secondary">
 
-            Edit Breed
+                ← Back
 
-        </a>
+            </a>
 
-        <a
-            href="/breeds"
-            class="btn btn-secondary">
+            <a
+                href="/breeds/<%= breed.id %>/edit"
+                class="btn btn-warning">
 
-            Back to Breeds
+                Edit Breed
 
-        </a>
+            </a>
+
+            <form
+                action="/breeds/<%= breed.id %>/delete"
+                method="POST">
+
+                <button
+                    class="btn btn-danger"
+                    onclick="return confirm('Delete this breed?')">
+
+                    Delete Breed
+
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 

@@ -1,57 +1,68 @@
-# PetChoice - WEB700 Part 3
+# 🐱 PetChoice - Part 3
 
-## Description
+## Overview
 
-PetChoice is a full-stack web application built using:
+PetChoice is a full-stack web application that allows users to browse and manage cat breed information.
+
+This project was built using:
 
 - Node.js
-- Express
+- Express.js
 - PostgreSQL (Neon)
-- Sequelize
+- Sequelize ORM
 - EJS
-- Bootstrap
+- Bootstrap 5
 
-The application allows users to browse, search, add, edit and delete cat breeds stored in a PostgreSQL database.
+The application supports full CRUD functionality and REST API endpoints.
 
 ---
 
 ## Features
 
-- Home page
-- View all breeds
-- Breed details
-- Search breeds
-- Add breed
-- Edit breed
-- Delete breed
+- Browse all cat breeds
+- View breed details
+- Search breeds by name or origin
+- Add a new breed
+- Edit existing breeds
+- Delete breeds
+- PostgreSQL database integration
 - REST API
-- Health endpoint
-- PostgreSQL database
-- Sequelize ORM
+- Responsive Bootstrap interface
+
+---
+
+## Technologies
+
+- Node.js
+- Express
+- PostgreSQL
+- Sequelize
+- Bootstrap
+- EJS
 
 ---
 
 ## Installation
 
+```bash
 npm install
-
-Create a `.env` file:
-
-DATABASE_URL=your_neon_database_url
-
-PORT=5500
-
-Seed the database:
-
-npm run seed
+```
 
 Run:
 
+```bash
 npm start
+```
+
+or
+
+```bash
+node server.js
+```
 
 ---
 
-## API
+## API Endpoints
 
 GET /api/breeds
 
@@ -61,16 +72,10 @@ GET /api/health
 
 ---
 
-## Technologies
+## Author
 
-Node.js
+Devkumar Patel
 
-Express
+Seneca Polytechnic
 
-Sequelize
-
-PostgreSQL
-
-Bootstrap 5
-
-EJS
+Business Information Technology

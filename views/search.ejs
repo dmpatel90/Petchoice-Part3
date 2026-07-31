@@ -1,100 +1,174 @@
-<%- include("partials/header", { title: "Search Breeds" }) %>
+<%- include("partials/header", { title: "Search Cat Breeds" }) %>
 
-<h1 class="mb-4 text-center">
-    Search Breeds
-</h1>
+<section class="page-hero">
 
-<form action="/search" method="GET" class="mb-5">
+    <div class="page-hero-inner">
 
-    <div class="row">
+        <p class="eyebrow eyebrow--light">Find Yours</p>
 
-        <div class="col-md-10">
+        <h1>🔍 Search Cat Breeds</h1>
 
-            <input
-                type="text"
-                name="q"
-                class="form-control"
-                placeholder="Search by breed name or origin..."
-                value="<%= req.query.q || '' %>">
-
-        </div>
-
-        <div class="col-md-2">
-
-            <button
-                class="btn btn-primary w-100">
-
-                Search
-
-            </button>
-
-        </div>
+        <p>Find your favorite cat breed by name, origin, temperament, coat type, or grooming level.</p>
 
     </div>
 
-</form>
+</section>
+
+<div class="content-section">
+
+<div class="row justify-content-center mb-5">
+
+    <div class="col-lg-8">
+
+        <form action="/search" method="GET">
+
+            <div class="input-group input-group-lg shadow-sm">
+
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="Try: Persian, Canada, Friendly..."
+                    value="<%= req.query.q || '' %>">
+
+                <button
+                    class="btn btn-primary px-4"
+                    type="submit">
+
+                    🔍 Search
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
 <% if (typeof breeds !== "undefined") { %>
 
     <% if (breeds.length === 0) { %>
 
-        <div class="alert alert-warning">
+        <div class="text-center py-5">
 
-            No breeds found.
+            <div style="font-size:70px;">😿</div>
+
+            <h2 class="fw-bold mt-3">
+
+                No Breeds Found
+
+            </h2>
+
+            <p class="text-muted">
+
+                We couldn't find any breeds matching your search.
+
+            </p>
+
+            <a href="/breeds" class="btn btn-primary">
+
+                Browse All Breeds
+
+            </a>
 
         </div>
 
     <% } else { %>
 
-        <div class="row">
+        <div class="mb-4">
 
-            <% breeds.forEach(breed => { %>
+            <h4>
 
-                <div class="col-lg-4 col-md-6 mb-4">
+                <strong><%= breeds.length %></strong>
 
-                    <div class="card h-100 shadow-sm">
+                breed<%= breeds.length !== 1 ? "s" : "" %> found
 
-                        <img
-                            src="<%= breed.imageUrl %>"
-                            class="card-img-top"
-                            alt="<%= breed.name %>"
-                            style="height:220px; object-fit:cover;">
+            </h4>
 
-                        <div class="card-body">
+        </div>
 
-                            <h4>
+        <div class="row g-4">
+
+            <% breeds.forEach((breed) => { %>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card breed-card h-100">
+
+                        <div class="image-wrapper">
+
+                            <img
+                                src="<%= breed.imageUrl %>"
+                                class="card-img-top"
+                                alt="<%= breed.name %>">
+
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h4 class="fw-bold">
 
                                 <%= breed.name %>
 
                             </h4>
 
-                            <p>
+                            <p class="text-primary fw-semibold">
 
-                                <strong>Origin:</strong>
-
-                                <%= breed.origin %>
+                                🌍 <%= breed.origin %>
 
                             </p>
 
-                            <p>
+                            <p class="text-muted">
 
-                                <strong>Temperament:</strong>
-
-                                <%= breed.temperament %>
+                                <%= breed.description.length > 110
+                                    ? breed.description.substring(0,110) + "..."
+                                    : breed.description %>
 
                             </p>
+
+                            <% if (breed.tags && breed.tags.length) { %>
+
+                                <div class="mt-auto mb-3">
+
+                                    <% breed.tags.forEach(tag => { %>
+
+                                        <span class="tag">
+
+                                            <%= tag %>
+
+                                        </span>
+
+                                    <% }) %>
+
+                                </div>
+
+                            <% } %>
 
                         </div>
 
-                        <div class="card-footer bg-white">
+                        <div class="card-footer">
 
-                            <a
-                                href="/breeds/<%= breed.id %>"
-                                class="btn btn-primary w-100">
+                            <div class="d-grid gap-2">
 
-                                View Details
+                                <a
+                                    href="/breeds/<%= breed.id %>"
+                                    class="btn btn-primary">
 
-                            </a>
+                                    View Details
+
+                                </a>
+
+                                <a
+                                    href="/breeds/<%= breed.id %>/edit"
+                                    class="btn btn-warning">
+
+                                    Edit Breed
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -109,5 +183,7 @@
     <% } %>
 
 <% } %>
+
+</div>
 
 <%- include("partials/footer") %>

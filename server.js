@@ -3,16 +3,15 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { Op } = require("sequelize");
-
 const { sequelize, Breed } = require("./models");
 
 const app = express();
 
 const PORT = process.env.PORT || 5500;
 
-// -----------------------------
+// =====================================
 // Middleware
-// -----------------------------
+// =====================================
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,11 +21,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Make query string available in every EJS page
 app.use((req, res, next) => {
     res.locals.req = req;
     next();
 });
+
+// =====================================
+// Home
+// =====================================
 
 app.get("/", async (req, res) => {
 
@@ -35,20 +37,42 @@ app.get("/", async (req, res) => {
         const total = await Breed.count();
 
         res.render("index", {
+
             title: "Home",
             total
+
         });
 
     } catch (err) {
 
         res.status(500).render("error", {
+
             title: "Error",
             message: err.message
+
         });
 
     }
 
 });
+
+// =====================================
+// About
+// =====================================
+
+app.get("/about", (req, res) => {
+
+    res.render("about", {
+
+        title: "About"
+
+    });
+
+});
+
+// =====================================
+// Browse Breeds
+// =====================================
 
 app.get("/breeds", async (req, res) => {
 
@@ -63,7 +87,6 @@ app.get("/breeds", async (req, res) => {
         res.render("breeds", {
 
             title: "All Breeds",
-
             breeds
 
         });
@@ -73,7 +96,6 @@ app.get("/breeds", async (req, res) => {
         res.status(500).render("error", {
 
             title: "Error",
-
             message: err.message
 
         });
@@ -96,46 +118,74 @@ app.get("/breeds/add", (req, res) => {
 
 });
 
-
 app.post("/breeds/add", async (req, res) => {
 
     try {
 
+        // Validation
+
+        if (
+
+            !req.body.id ||
+            !req.body.name ||
+            !req.body.origin ||
+            !req.body.temperament ||
+            !req.body.description ||
+            !req.body.imageUrl ||
+            !req.body.lifespan ||
+            !req.body.weight ||
+            !req.body.coatType
+
+        ) {
+
+            return res.status(400).render("error", {
+
+                title: "Validation Error",
+
+                message: "Please fill in all required fields."
+
+            });
+
+        }
+
+        // Prevent duplicate IDs
+
+        const existingBreed = await Breed.findByPk(req.body.id);
+
+        if (existingBreed) {
+
+            return res.status(400).render("error", {
+
+                title: "Duplicate Breed",
+
+                message: "A breed with this ID already exists."
+
+            });
+
+        }
+
         await Breed.create({
 
             id: req.body.id,
-
             name: req.body.name,
-
             origin: req.body.origin,
-
             temperament: req.body.temperament,
-
             description: req.body.description,
-
             imageUrl: req.body.imageUrl,
-
             lifespan: req.body.lifespan,
-
             weight: req.body.weight,
-
             coatType: req.body.coatType,
-
             groomingLevel: req.body.groomingLevel,
 
             tags: req.body.tags
-                ? req.body.tags
-                      .split(",")
-                      .map(tag => tag.trim())
+                ? req.body.tags.split(",").map(tag => tag.trim())
                 : []
 
         });
 
         res.redirect("/breeds");
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).render("error", {
 
@@ -148,6 +198,9 @@ app.post("/breeds/add", async (req, res) => {
     }
 
 });
+// =====================================
+// Breed Details
+// =====================================
 
 app.get("/breeds/:id", async (req, res) => {
 
@@ -160,7 +213,6 @@ app.get("/breeds/:id", async (req, res) => {
             return res.status(404).render("error", {
 
                 title: "Not Found",
-
                 message: "Breed not found."
 
             });
@@ -170,7 +222,6 @@ app.get("/breeds/:id", async (req, res) => {
         res.render("breedDetails", {
 
             title: breed.name,
-
             breed
 
         });
@@ -180,7 +231,6 @@ app.get("/breeds/:id", async (req, res) => {
         res.status(500).render("error", {
 
             title: "Error",
-
             message: err.message
 
         });
@@ -204,7 +254,6 @@ app.get("/breeds/:id/edit", async (req, res) => {
             return res.status(404).render("error", {
 
                 title: "Not Found",
-
                 message: "Breed not found."
 
             });
@@ -214,19 +263,15 @@ app.get("/breeds/:id/edit", async (req, res) => {
         res.render("breedEdit", {
 
             title: "Edit Breed",
-
             breed
 
         });
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).render("error", {
 
             title: "Error",
-
             message: err.message
 
         });
@@ -242,32 +287,20 @@ app.post("/breeds/:id/edit", async (req, res) => {
         await Breed.update({
 
             name: req.body.name,
-
             origin: req.body.origin,
-
             temperament: req.body.temperament,
-
             description: req.body.description,
-
             imageUrl: req.body.imageUrl,
-
             lifespan: req.body.lifespan,
-
             weight: req.body.weight,
-
             coatType: req.body.coatType,
-
             groomingLevel: req.body.groomingLevel,
 
             tags: req.body.tags
-                ? req.body.tags
-                      .split(",")
-                      .map(tag => tag.trim())
+                ? req.body.tags.split(",").map(tag => tag.trim())
                 : []
 
-        },
-
-        {
+        }, {
 
             where: {
 
@@ -279,14 +312,11 @@ app.post("/breeds/:id/edit", async (req, res) => {
 
         res.redirect(`/breeds/${req.params.id}`);
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).render("error", {
 
             title: "Error",
-
             message: err.message
 
         });
@@ -296,7 +326,45 @@ app.post("/breeds/:id/edit", async (req, res) => {
 });
 
 // =====================================
-// Search Breeds
+// Delete Breed
+// =====================================
+
+app.post("/breeds/:id/delete", async (req, res) => {
+
+    try {
+
+        const breed = await Breed.findByPk(req.params.id);
+
+        if (!breed) {
+
+            return res.status(404).render("error", {
+
+                title: "Not Found",
+                message: "Breed not found."
+
+            });
+
+        }
+
+        await breed.destroy();
+
+        res.redirect("/breeds");
+
+    } catch (err) {
+
+        res.status(500).render("error", {
+
+            title: "Error",
+            message: err.message
+
+        });
+
+    }
+
+});
+
+// =====================================
+// Search
 // =====================================
 
 app.get("/search", async (req, res) => {
@@ -308,8 +376,10 @@ app.get("/search", async (req, res) => {
         if (!search) {
 
             return res.render("search", {
+
                 title: "Search",
                 breeds: []
+
             });
 
         }
@@ -330,6 +400,24 @@ app.get("/search", async (req, res) => {
                         origin: {
                             [Op.iLike]: `%${search}%`
                         }
+                    },
+
+                    {
+                        temperament: {
+                            [Op.iLike]: `%${search}%`
+                        }
+                    },
+
+                    {
+                        coatType: {
+                            [Op.iLike]: `%${search}%`
+                        }
+                    },
+
+                    {
+                        groomingLevel: {
+                            [Op.iLike]: `%${search}%`
+                        }
                     }
 
                 ]
@@ -343,19 +431,15 @@ app.get("/search", async (req, res) => {
         res.render("search", {
 
             title: "Search",
-
             breeds
 
         });
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).render("error", {
 
             title: "Error",
-
             message: err.message
 
         });
@@ -365,43 +449,7 @@ app.get("/search", async (req, res) => {
 });
 
 // =====================================
-// Delete Breed
-// =====================================
-
-app.post("/breeds/:id/delete", async (req, res) => {
-
-    try {
-
-        await Breed.destroy({
-
-            where: {
-
-                id: req.params.id
-
-            }
-
-        });
-
-        res.redirect("/breeds");
-
-    }
-
-    catch (err) {
-
-        res.status(500).render("error", {
-
-            title: "Error",
-
-            message: err.message
-
-        });
-
-    }
-
-});
-
-// =====================================
-// REST API - Get All Breeds
+// REST API - All Breeds
 // =====================================
 
 app.get("/api/breeds", async (req, res) => {
@@ -416,9 +464,7 @@ app.get("/api/breeds", async (req, res) => {
 
         res.json(breeds);
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).json({
 
@@ -430,9 +476,8 @@ app.get("/api/breeds", async (req, res) => {
 
 });
 
-
 // =====================================
-// REST API - Get One Breed
+// REST API - Single Breed
 // =====================================
 
 app.get("/api/breeds/:id", async (req, res) => {
@@ -453,9 +498,7 @@ app.get("/api/breeds/:id", async (req, res) => {
 
         res.json(breed);
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).json({
 
@@ -467,9 +510,8 @@ app.get("/api/breeds/:id", async (req, res) => {
 
 });
 
-
 // =====================================
-// API Health Check
+// API Health
 // =====================================
 
 app.get("/api/health", async (req, res) => {
@@ -483,25 +525,18 @@ app.get("/api/health", async (req, res) => {
         res.json({
 
             status: "OK",
-
             database: "Connected",
-
             breeds: total,
-
             timestamp: new Date()
 
         });
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         res.status(500).json({
 
             status: "ERROR",
-
             database: "Disconnected",
-
             message: err.message
 
         });
@@ -510,9 +545,8 @@ app.get("/api/health", async (req, res) => {
 
 });
 
-
 // =====================================
-// 404 Handler
+// 404
 // =====================================
 
 app.use((req, res) => {
@@ -520,13 +554,11 @@ app.use((req, res) => {
     res.status(404).render("error", {
 
         title: "404",
-
         message: "The page you requested could not be found."
 
     });
 
 });
-
 
 // =====================================
 // Global Error Handler
@@ -539,13 +571,11 @@ app.use((err, req, res, next) => {
     res.status(500).render("error", {
 
         title: "Server Error",
-
         message: err.message
 
     });
 
 });
-
 
 // =====================================
 // Start Server
@@ -567,12 +597,9 @@ async function startServer() {
 
         });
 
-    }
-
-    catch (err) {
+    } catch (err) {
 
         console.error("❌ Failed to start application");
-
         console.error(err);
 
     }
