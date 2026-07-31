@@ -72,9 +72,10 @@ GET /api/health
 
 ---
 
-## Author
+## Authors
 
 Devkumar Patel
+Ebuka Precious Akaegbusi
 
 Seneca Polytechnic
 
