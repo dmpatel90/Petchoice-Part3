@@ -577,11 +577,11 @@ app.use((err, req, res, next) => {
 
 });
 
-// =====================================
-// Start Server
+/// =====================================
+// Initialize Database
 // =====================================
 
-async function startServer() {
+async function initialize() {
 
     try {
 
@@ -591,19 +591,28 @@ async function startServer() {
 
         await sequelize.sync();
 
-        app.listen(PORT, () => {
-
-            console.log(`🚀 Server running on http://localhost:${PORT}`);
-
-        });
-
     } catch (err) {
 
-        console.error("❌ Failed to start application");
+        console.error("❌ Database initialization failed");
+
         console.error(err);
 
     }
 
 }
 
-startServer();
+initialize();
+
+// Export app for Vercel
+module.exports = app;
+
+// Start local server only when NOT running on Vercel
+if (!process.env.VERCEL) {
+
+    app.listen(PORT, () => {
+
+        console.log(`🚀 Server running on http://localhost:${PORT}`);
+
+    });
+
+}
