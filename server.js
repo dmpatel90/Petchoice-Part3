@@ -27,13 +27,13 @@ const PORT = process.env.PORT || 5500;
 
 // Security Headers
 app.use(
-    helmet({
-        contentSecurityPolicy: false,
-        crossOriginEmbedderPolicy: false,
-        crossOriginOpenerPolicy: false,
-        crossOriginResourcePolicy: false,
-        originAgentCluster: false
-    })
+  helmet({
+       contentSecurityPolicy: false,
+       crossOriginEmbedderPolicy: false,
+      crossOriginOpenerPolicy: false,
+       crossOriginResourcePolicy: false,
+     originAgentCluster: false
+   })
 );
 
 // Parse Form Data

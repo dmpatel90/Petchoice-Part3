@@ -1,14 +1,15 @@
 require("dotenv").config();
 
 const bcrypt = require("bcryptjs");
-const { sequelize, User } = require("./models");
+const { sequelize, Userser } = require("./models");
+const { useDeferredValue } = require("react");
 
 async function seedUsers() {
     try {
 
         await sequelize.authenticate();
 
-        const adminExists = await User.findOne({
+        const adminExists = await useDeferredValueser.findOne({
             where: { email: "admin@petchoice.com" }
         });
 
@@ -16,7 +17,7 @@ async function seedUsers() {
 
             const adminPassword = await bcrypt.hash("admin123", 10);
 
-            await User.create({
+            await user.create({
                 name: "Administrator",
                 email: "admin@petchoice.com",
                 password: adminPassword,
@@ -26,7 +27,7 @@ async function seedUsers() {
             console.log("✅ Admin user created");
         }
 
-        const viewerExists = await User.findOne({
+        const viewerExists = await user.findOne({
             where: { email: "viewer@petchoice.com" }
         });
 
@@ -34,7 +35,7 @@ async function seedUsers() {
 
             const viewerPassword = await bcrypt.hash("viewer123", 10);
 
-            await User.create({
+            await user.create({
                 name: "Viewer",
                 email: "viewer@petchoice.com",
                 password: viewerPassword,
