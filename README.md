@@ -176,7 +176,7 @@ node server.js
 
 | Email | Password |
 |--------|----------|
-| admin@petchoice.com | admin123 |
+| admin@abc.com | admin123 |
 
 ---
 
