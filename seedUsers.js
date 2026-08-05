@@ -1,15 +1,14 @@
 require("dotenv").config();
 
 const bcrypt = require("bcryptjs");
-const { sequelize, Userser } = require("./models");
-const { useDeferredValue } = require("react");
+const { sequelize, user } = require("./models");
 
 async function seedUsers() {
     try {
 
         await sequelize.authenticate();
 
-        const adminExists = await useDeferredValueser.findOne({
+        const adminExists = await user.findOne({
             where: { email: "admin@petchoice.com" }
         });
 

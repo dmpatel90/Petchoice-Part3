@@ -51,7 +51,7 @@ Summer 2026
 
 # 📖 Project Overview
 
-PetChoice is a full-stack web application that enables users to discover, browse, search, and manage information about cat breeds.
+PetChoice is a full-stack web application that enables users to discover, browse, search, and manage information about cat breeds behind secure member accounts.
 
 The application was developed as the final project for **WEB700 – Web Programming** at **Seneca Polytechnic**.
 
@@ -61,12 +61,12 @@ The goal of the project is to demonstrate practical knowledge of:
 - RESTful API Design
 - Database Management
 - Authentication & Authorization
-- Secure Web Programming
+- Secure Web Programming (CSRF protection, rate limiting, OTP-based account recovery)
 - MVC Design Pattern
 - CRUD Operations
 - Responsive Web Design
 
-The application integrates PostgreSQL with Node.js using Sequelize ORM and provides a secure authentication system with role-based access control.
+The application integrates PostgreSQL with Node.js using Sequelize ORM and provides a secure authentication system — registration, login/logout, self-service password changes, OTP-based password recovery, and role-based access control — backed by Postgres-persisted sessions.
 
 ---
 
@@ -76,7 +76,7 @@ The application is deployed and publicly accessible on Vercel:
 
 🔗 **[https://petchoice-part3.vercel.app/](https://petchoice-part3.vercel.app/)**
 
-Use the [Default User Accounts](#-default-user-accounts) below to log in and explore both Administrator and Viewer roles.
+Create a free account, or use the [Default User Accounts](#-default-user-accounts) below to log in and explore both Administrator and Viewer roles.
 
 ---
 
@@ -92,6 +92,9 @@ The primary objectives of PetChoice are:
 - Secure the application using authentication
 - Implement role-based authorization
 - Protect administrator routes
+- Restrict the breed catalog to registered, logged-in users
+- Provide self-service account recovery via a one-time verification code
+- Harden the application against CSRF and brute-force attacks
 - Follow modern Node.js development practices
 
 ---
@@ -100,7 +103,7 @@ The primary objectives of PetChoice are:
 
 ## 🐱 Breed Catalog
 
-Users can:
+Once logged in, users can:
 
 - Browse all available cat breeds
 - View detailed breed information
@@ -122,20 +125,22 @@ Each breed displays:
 - Grooming Level
 - Tags
 
+The catalog, search, and breed detail pages all require an active login — guests are redirected to the login page.
+
 ---
 
 ## ✏ Administrator Features
 
 Administrator users can:
 
-- Login
-- Logout
-- Browse breeds
-- Search breeds
+- Register, login, logout
+- Browse and search breeds
 - Add new breeds
 - Edit existing breeds
 - Delete breeds
-- Manage all breed records
+- Change their own password
+- Recover their password via a one-time email code
+- View the Admin Dashboard (total breeds, total users, admins vs. viewers, top breed origins, recently added breeds, and a full user account list)
 
 ---
 
@@ -143,17 +148,29 @@ Administrator users can:
 
 Viewer users can:
 
-- Login
-- Logout
+- Register, login, logout
 - Browse breeds
 - Search breeds
 - View breed information
+- Change their own password
+- Recover their password via a one-time email code
 
 Viewer users cannot:
 
 - Add breeds
 - Edit breeds
 - Delete breeds
+- Access the Admin Dashboard
+
+---
+
+## 🔐 Account & Security Features
+
+- **Register** — anyone can create a free account (name, email, optional phone, password). New accounts are always created with the Viewer role; Administrator accounts are seeded, not self-assigned.
+- **Change Password** — available to both roles, requires the current password before setting a new one.
+- **Forgot Password (OTP)** — a 3-step, email-based one-time code flow: request a code, verify the 6-digit code, then set a new password. Codes expire after 10 minutes and are stored bcrypt-hashed, never in plaintext.
+- **CSRF Protection** — every form submits a session-bound token, verified on the server before any state-changing request is processed.
+- **Rate Limiting** — login, registration, and OTP requests are throttled to blunt brute-force and spam attempts.
 
 ---
 
@@ -176,9 +193,12 @@ Viewer users cannot:
 
 ## Security
 
-- bcrypt.js
-- Express Session
-- Helmet
+- bcrypt.js — password & OTP hashing
+- Express Session, backed by `connect-pg-simple` (Postgres-persisted sessions)
+- Helmet — HTTP security headers, including an active Content Security Policy
+- express-rate-limit — brute-force / spam throttling on auth routes
+- Node's built-in `crypto` module — one-time code generation
+- nodemailer — optional real email delivery for OTP codes
 - dotenv
 
 ## Development Tools
@@ -246,9 +266,18 @@ Controllers (Routes) process user requests.
 |----------|------------|
 | id | User ID |
 | name | User Name |
-| email | User Email |
+| email | User Email (unique) |
 | password | bcrypt Hashed Password |
 | role | Administrator / Viewer |
+| phone | Phone Number (optional, unique — collected at registration) |
+| reset_otp_hash | bcrypt-hashed one-time password reset code |
+| reset_otp_expires_at | Expiry timestamp for the active reset code |
+
+---
+
+## session Table
+
+Auto-created by `connect-pg-simple` on first run. Stores active login sessions in Postgres instead of server memory, so sessions survive serverless cold starts on Vercel.
 
 ---
 
@@ -257,20 +286,31 @@ Controllers (Routes) process user requests.
 The application implements secure authentication using:
 
 - bcrypt password hashing
-- Express Session
+- Express Session, persisted in Postgres (`connect-pg-simple`) rather than in-memory
 - Session cookies
+- CSRF-protected forms (session-bound tokens, verified on every POST)
+- Rate-limited login, registration, and OTP endpoints
 - Protected routes
-- Role-based middleware
+- Role-based middleware (`requireLogin`, `requireAdmin`)
+
+## Account Flows
+
+- **Register** (`/register`) — creates a Viewer account and signs the user in immediately.
+- **Login / Logout** (`/login`, `/logout`)
+- **Change Password** (`/change-password`) — requires the current password; available to both roles.
+- **Forgot Password** (`/forgot-password` → `/verify-otp` → `/reset-password`) — a one-time 6-digit code identifies the account by email. In demo mode (no email service configured) the code is shown directly on screen and logged server-side; if `SMTP_*` variables are set in `.env`, the code is also emailed for real.
+
+## Roles
 
 Two roles exist within the application.
 
-## Administrator
+### Administrator
 
-Has full access to CRUD operations.
+Has full access to CRUD operations and the Admin Dashboard.
 
-## Viewer
+### Viewer
 
-Has read-only access.
+Has read-only access to the breed catalog.
 
 Passwords are never stored in plaintext.
 
@@ -284,7 +324,7 @@ Passwords are never stored in plaintext.
 GET /api/breeds
 ```
 
-Returns every breed stored in the database.
+Returns every breed stored in the database. Requires an active login session — an unauthenticated request receives `401 { "error": "Authentication required." }` instead of a redirect.
 
 ---
 
@@ -294,7 +334,7 @@ Returns every breed stored in the database.
 GET /api/breeds/:id
 ```
 
-Returns detailed information for one breed.
+Returns detailed information for one breed. Also requires an active login session.
 
 ---
 
@@ -304,7 +344,7 @@ Returns detailed information for one breed.
 GET /api/health
 ```
 
-Returns database connectivity status.
+Returns database connectivity status. Not authentication-protected (diagnostic endpoint).
 
 ---
 
@@ -353,35 +393,19 @@ This installs every dependency listed in `package.json`, including:
 | `sequelize` | ORM for PostgreSQL |
 | `pg` / `pg-hstore` | PostgreSQL driver for Sequelize |
 | `ejs` | Server-rendered view templates |
-| `bcryptjs` | Password hashing |
+| `bcryptjs` | Password & OTP hashing |
 | `express-session` | Session-based authentication |
-| `helmet` | Secures the app by setting HTTP response headers |
+| `connect-pg-simple` | Persists sessions to Postgres instead of server memory |
+| `express-rate-limit` | Throttles login / register / OTP requests |
+| `helmet` | Secures the app by setting HTTP response headers, including CSP |
+| `nodemailer` | Optional real email delivery for OTP codes |
 | `dotenv` | Loads environment variables from `.env` |
-
-If you ever need to install any of these individually (e.g. after a fresh `package.json`), you can run:
-
-```bash
-npm install express sequelize pg pg-hstore ejs bcryptjs express-session helmet dotenv
-```
-
-Helmet specifically can be installed on its own with:
-
-```bash
-npm install helmet
-```
-
-and is enabled in `server.js` via:
-
-```javascript
-const helmet = require("helmet");
-app.use(helmet());
-```
 
 ---
 
 ## 3. Configure environment variables
 
-Create a `.env` file
+Create a `.env` file:
 
 ```env
 DATABASE_URL=your_database_url
@@ -389,15 +413,39 @@ DATABASE_URL=your_database_url
 SESSION_SECRET=your_secret_key
 
 PORT=5500
+
+# Optional — only needed if you want Forgot Password to actually email the
+# OTP code instead of just showing it on screen ("demo mode")
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-address@gmail.com
+SMTP_PASS=your-16-char-app-password
+SMTP_FROM=your-address@gmail.com
 ```
 
-## 4. Seed default users
+---
+
+## 4. Run the schema migration (one-time)
+
+Registration and password recovery added new columns (`phone`, `reset_otp_hash`, `reset_otp_expires_at`) to the `users` table. If you're pointing at a database that already has a `users` table from an earlier version of this project, bring it up to date once:
+
+```bash
+npm run migrate
+```
+
+Safe to run again later — it only adds missing columns, it never touches existing data.
+
+---
+
+## 5. Seed default users
 
 ```bash
 node seedUsers.js
 ```
 
-## 5. Run the application
+---
+
+## 6. Run the application
 
 ```bash
 node server.js
@@ -409,7 +457,9 @@ or, using the npm script:
 npm start
 ```
 
-## 6. Open the app
+---
+
+## 7. Open the app
 
 ```
 http://localhost:5500
@@ -424,6 +474,8 @@ https://petchoice-part3.vercel.app/
 ---
 
 # 👤 Default User Accounts
+
+Anyone can also [register a free account](/register) — new accounts are always created as Viewer. The accounts below are seeded for demo/testing convenience.
 
 ## Administrator
 
@@ -465,7 +517,12 @@ PetChoice
 ├── config
 │     database.js
 │
+├── lib
+│     mailer.js
+│
 ├── middleware
+│     requireAdmin.js
+│     requireLogin.js
 │
 ├── models
 │     Breed.js
@@ -475,7 +532,6 @@ PetChoice
 ├── public
 │     css
 │     images
-│     js
 │
 ├── routes
 │     auth.js
@@ -483,14 +539,20 @@ PetChoice
 ├── views
 │     partials
 │     about.ejs
+│     adminDashboard.ejs
 │     breeds.ejs
 │     breedAdd.ejs
 │     breedDetails.ejs
 │     breedEdit.ejs
+│     changePassword.ejs
 │     error.ejs
+│     forgotPassword.ejs
 │     index.ejs
 │     login.ejs
+│     register.ejs
+│     resetPassword.ejs
 │     search.ejs
+│     verifyOtp.ejs
 │
 ├── screenshots
 │     image.png
@@ -500,6 +562,8 @@ PetChoice
 │     image-4.png
 │     image-5.png
 │
+├── migrate.js
+├── seed.js
 ├── seedUsers.js
 ├── server.js
 ├── package.json
@@ -512,25 +576,25 @@ PetChoice
 
 Home Page
 
-Displays project introduction and navigation.
+Displays project introduction, live member/breed counts, and navigation.
 
 ---
 
 Breed Catalog
 
-Displays all available breeds.
+Displays all available breeds. Requires login.
 
 ---
 
 Breed Details
 
-Displays complete breed information.
+Displays complete breed information. Requires login.
 
 ---
 
 Search Page
 
-Allows searching by breed name and origin.
+Allows searching by breed name, origin, temperament, coat type, and grooming level. Requires login.
 
 ---
 
@@ -552,9 +616,45 @@ Administrator only.
 
 ---
 
+Admin Dashboard
+
+Administrator only — total breeds, total users, admin/viewer counts, top breed origins, recently added breeds, and the full user account list.
+
+---
+
+Register
+
+Create a free account (Viewer role).
+
+---
+
 Login
 
 Allows users to authenticate.
+
+---
+
+Forgot Password
+
+Request a one-time verification code by email.
+
+---
+
+Verify Code
+
+Enter the 6-digit code sent (or shown in demo mode) to continue account recovery.
+
+---
+
+Reset Password
+
+Set a new password after verifying the code.
+
+---
+
+Change Password
+
+Update your password while logged in (requires current password).
 
 ---
 
@@ -566,19 +666,27 @@ Project information.
 
 Error Page
 
-Displays custom application errors.
+Displays custom application errors — internal error details are logged server-side only, never shown to the user.
 
 ---
 
 # 🔒 Security Features
 
-✔ Helmet
+✔ Helmet, with an active Content Security Policy
 
-✔ Express Session
+✔ Postgres-Backed Sessions (`connect-pg-simple`, not in-memory)
+
+✔ CSRF Protection (session-bound token on every form)
+
+✔ Rate Limiting (login, registration, OTP requests)
 
 ✔ bcrypt Password Hashing
 
-✔ Protected Routes
+✔ One-Time Password (OTP) Account Recovery
+
+✔ Sanitized Error Messages (no internal details shown to users)
+
+✔ Protected Routes — Breed Catalog requires login
 
 ✔ Role-Based Authorization
 
@@ -592,21 +700,31 @@ Displays custom application errors.
 
 # 🧪 Testing
 
-The following features have been tested.
+The following have been implemented and verified during development (including live end-to-end runs against a real Postgres database — registration, login, CSRF rejection/acceptance, the full OTP password-reset flow, and admin breed CRUD):
 
 ✔ CRUD Operations
 
 ✔ PostgreSQL Connection
 
+✔ Registration
+
 ✔ Authentication
 
 ✔ Authorization
 
-✔ Express Session
+✔ Change Password
+
+✔ Forgot Password / OTP Verification
+
+✔ Express Session (Postgres-backed)
 
 ✔ Logout
 
 ✔ Route Protection
+
+✔ CSRF Protection
+
+✔ Rate Limiting
 
 ✔ REST API
 
@@ -616,24 +734,24 @@ The following features have been tested.
 
 ✔ Validation
 
+Before presenting live, do a final click-through pass yourselves on the deployed Vercel URL — automated/local verification doesn't replace testing the actual production environment.
+
 ---
 
 # 🚧 Future Enhancements
 
-The following features will be implemented in the final version.
+The following features are not yet implemented:
 
-- User Registration
-- Change Password
-- User Dashboard
 - Favorites
 - Profile Management
 - Search History
 - Recently Viewed Breeds
-- Dashboard Analytics
+- Expanded Dashboard Analytics (charts/trends over time)
 - Pagination
-- Image Upload
-- Email Verification
-- Password Reset
+- Image Upload (currently image URLs only)
+- Email Verification at signup
+- OTP-based Two-Factor Login (currently OTP is used for password recovery only)
+- Automated Test Suite (unit/integration tests)
 - Improved Mobile UI
 
 ---
@@ -659,6 +777,8 @@ Screenshots are stored in [`/screenshots`](./screenshots) and embedded below.
 
 ### Edit Breed (Administrator)
 ![Edit Breed](./screenshots/image-5.png)
+
+> Screenshots above predate Register, Forgot Password/OTP, Change Password, and the Admin Dashboard — worth adding fresh ones of those pages before final submission.
 
 ---
 

@@ -20,6 +20,12 @@
             </a>
         </li>
 
+        <li>
+            <a href="/admin/dashboard" class="<%= typeof req !== 'undefined' && req.path === '/admin/dashboard' ? 'active' : '' %>">
+                Dashboard
+            </a>
+        </li>
+
     <% } %>
 
     <li>
@@ -37,6 +43,12 @@
     <% if (user) { %>
 
         <li>
+            <a href="/change-password" class="<%= typeof req !== 'undefined' && req.path === '/change-password' ? 'active' : '' %>">
+                Change Password
+            </a>
+        </li>
+
+        <li>
             <span class="nav-user">
                 👋 <%= user.name %> (<%= user.role %>)
             </span>
@@ -49,6 +61,12 @@
         </li>
 
     <% } else { %>
+
+        <li>
+            <a href="/register" class="<%= typeof req !== 'undefined' && req.path === '/register' ? 'active' : '' %>">
+                Register
+            </a>
+        </li>
 
         <li>
             <a href="/login" class="<%= typeof req !== 'undefined' && req.path === '/login' ? 'active' : '' %>">

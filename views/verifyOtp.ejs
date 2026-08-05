@@ -1,0 +1,99 @@
+<%- include("partials/header", { title: "Verify Code" }) %>
+
+<section class="page-hero">
+
+    <div class="page-hero-inner">
+
+        <p class="eyebrow eyebrow--light">Account Recovery</p>
+
+        <h1>Enter your verification code</h1>
+
+        <p>We generated a 6-digit code for <%= email %>.</p>
+
+    </div>
+
+</section>
+
+<div class="content-section">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col-md-8">
+
+            <div class="form-card">
+
+                <div class="text-center mb-4">
+
+                    <p class="eyebrow">Step 2 of 3</p>
+
+                    <h1 class="display-6 fw-bold">📩 Verify Code</h1>
+
+                    <p class="text-muted">This code expires in 10 minutes.</p>
+
+                </div>
+
+                <% if (typeof demoCode !== 'undefined' && demoCode) { %>
+
+                    <div class="alert alert-warning" role="alert">
+
+                        <strong>Your verification code: <%= demoCode %></strong>
+
+                        <br>
+
+                        <small>
+
+                            <% if (typeof emailed !== 'undefined' && emailed) { %>
+                                We also emailed this code to <%= email %>.
+                            <% } else { %>
+                                Shown here directly since no email delivery is configured yet — see .env.example (SMTP_*) to enable real email delivery.
+                            <% } %>
+
+                        </small>
+
+                    </div>
+
+                <% } %>
+
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-danger" role="alert"><%= error %></div>
+                <% } %>
+
+                <form action="/verify-otp" method="POST">
+
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
+                    <div class="mb-4">
+
+                        <label class="form-label">6-Digit Code <span class="required">*</span></label>
+
+                        <input
+                            type="text"
+                            name="code"
+                            inputmode="numeric"
+                            pattern="[0-9]*"
+                            maxlength="6"
+                            class="form-control"
+                            placeholder="123456"
+                            required>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn btn-primary">Verify Code</button>
+
+                        <a href="/forgot-password" class="btn btn-outline-secondary">Resend Code</a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>
