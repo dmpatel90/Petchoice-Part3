@@ -619,7 +619,7 @@ app.post("/login", async (req, res) => {
         const { email, password } = req.body;
 
         // Find user by email
-        const dbUser = await user.findOne({
+        const dbUser = await User.findOne({
             where: { email }
         });
 
