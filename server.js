@@ -14,7 +14,7 @@ const {
 } = require("./routes/auth");
 const { Op } = require("sequelize");
 
-const { sequelize, Breed, User } = require("./models");
+const { sequelize, Breed, user : User } = require("./models");
 
 const app = express();
 console.log("SERVER VERSION 2");
@@ -618,31 +618,43 @@ app.post("/login", async (req, res) => {
 
         const { email, password } = req.body;
 
-        const user = await User.findOne({
+        // Find user by email
+        const dbUser = await user.findOne({
             where: { email }
         });
 
-        if (!user) {
+        if (!dbUser) {
+
             return res.render("login", {
                 title: "Login",
                 error: "Invalid email or password."
             });
+
         }
 
-        const validPassword = await bcrypt.compare(password, user.password);
+        // Compare password
+        const validPassword = await bcrypt.compare(
+            password,
+            dbUser.password
+        );
 
         if (!validPassword) {
+
             return res.render("login", {
                 title: "Login",
                 error: "Invalid email or password."
             });
+
         }
 
+        // Create session
         req.session.user = {
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            role: user.role
+
+            id: dbUser.id,
+            name: dbUser.name,
+            email: dbUser.email,
+            role: dbUser.role
+
         };
 
         return res.redirect("/");
@@ -658,7 +670,7 @@ app.post("/login", async (req, res) => {
 
     }
 
-});   
+});
 // =====================================
 // Logout
 // =====================================
