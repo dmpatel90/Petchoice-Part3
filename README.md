@@ -430,7 +430,7 @@ https://petchoice-part3.vercel.app/
 Email
 
 ```
-admin@abc.com
+admin@petchoice.com
 ```
 
 Password
@@ -492,14 +492,13 @@ PetChoice
 │     login.ejs
 │     search.ejs
 │
-├── docs
-│     screenshots
-│           home.png
-│           login.png
-│           breeds.png
-│           breedDetails.png
-│           breedAdd.png
-│           breedEdit.png
+├── screenshots
+│     image.png
+│     image-1.png
+│     image-2.png
+│     image-3.png
+│     image-4.png
+│     image-5.png
 │
 ├── seedUsers.js
 ├── server.js
@@ -641,25 +640,25 @@ The following features will be implemented in the final version.
 
 # 📸 Screenshots
 
-Screenshots are stored in [`/docs/screenshots`](./docs/screenshots) and embedded below.
+Screenshots are stored in [`/screenshots`](./screenshots) and embedded below.
 
 ### Home Page
-![Home Page](./docs/screenshots/home.png)
+![Home Page](./screenshots/image.png)
 
 ### Login
-![Login Page](./docs/screenshots/login.png)
+![Login Page](./screenshots/image-1.png)
 
 ### Breed Catalog
-![Breed Catalog](./docs/screenshots/breeds.png)
+![Breed Catalog](./screenshots/image-2.png)
 
 ### Breed Details
-![Breed Details](./docs/screenshots/breedDetails.png)
+![Breed Details](./screenshots/image-3.png)
 
 ### Add Breed (Administrator)
-![Add Breed](./docs/screenshots/breedAdd.png)
+![Add Breed](./screenshots/image-4.png)
 
 ### Edit Breed (Administrator)
-![Edit Breed](./docs/screenshots/breedEdit.png)
+![Edit Breed](./screenshots/image-5.png)
 
 ---
 
