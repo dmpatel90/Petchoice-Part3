@@ -55,7 +55,9 @@
             Showing <strong><%= breeds.length %></strong> breed<%= breeds.length !== 1 ? "s" : "" %>
         </p>
 
+        <% if (user && user.role === "admin") { %>
         <a href="/breeds/add" class="btn btn-clay btn-add">+ Add Breed</a>
+    <% } %>
 
     </div>
 
@@ -120,6 +122,8 @@
                     <div class="card-actions">
 
                         <a href="/breeds/<%= breed.id %>" class="btn btn-primary">View</a>
+
+                        <% if (user && user.role === "admin") { %>
                         <a href="/breeds/<%= breed.id %>/edit" class="btn btn-warning">Edit</a>
 
                         <form action="/breeds/<%= breed.id %>/delete" method="POST" class="d-inline">
@@ -130,6 +134,7 @@
                                 Delete
                             </button>
                         </form>
+                        <% } %>
 
                     </div>
 

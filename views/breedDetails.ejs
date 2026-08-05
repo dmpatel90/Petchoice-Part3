@@ -133,6 +133,8 @@
 
             </a>
 
+<% if (user && user.role === "admin") { %>
+
             <a
                 href="/breeds/<%= breed.id %>/edit"
                 class="btn btn-warning">
@@ -154,6 +156,8 @@
                 </button>
 
             </form>
+
+<% } %>
 
         </div>
 

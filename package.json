@@ -18,10 +18,13 @@
   "author": "Devkumar Patel & Ebuka Akaegbusi",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "debug": "^4.4.3",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3"

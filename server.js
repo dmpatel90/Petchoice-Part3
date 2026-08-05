@@ -2,10 +2,22 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+const session = require("express-session");
+const bcrypt = require("bcryptjs");
+const helmet = require("helmet");
+const {
+
+    requireLogin,
+
+    requireAdmin
+
+} = require("./routes/auth");
 const { Op } = require("sequelize");
-const { sequelize, Breed } = require("./models");
+
+const { sequelize, Breed, User } = require("./models");
 
 const app = express();
+console.log("SERVER VERSION 2");
 
 const PORT = process.env.PORT || 5500;
 
@@ -13,17 +25,56 @@ const PORT = process.env.PORT || 5500;
 // Middleware
 // =====================================
 
+// Security Headers
+app.use(
+    helmet({
+        contentSecurityPolicy: false,
+        crossOriginEmbedderPolicy: false,
+        crossOriginOpenerPolicy: false,
+        crossOriginResourcePolicy: false,
+        originAgentCluster: false
+    })
+);
+
+// Parse Form Data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Sessions
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET || "petchoice-secret-key",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1000 * 60 * 60 // 1 Hour
+        }
+    })
+);
+
+// Static Files
 app.use(express.static(path.join(__dirname, "public")));
 
+// EJS
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// Logged-in User Available Everywhere
 app.use((req, res, next) => {
-    res.locals.req = req;
+
+    res.locals.user = req.session.user || null;
+
     next();
+
+});
+
+// Current Request Available in Views
+app.use((req, res, next) => {
+
+    res.locals.req = req;
+
+    next();
+
 });
 
 // =====================================
@@ -108,7 +159,7 @@ app.get("/breeds", async (req, res) => {
 // Add Breed
 // =====================================
 
-app.get("/breeds/add", (req, res) => {
+app.get("/breeds/add", requireAdmin, (req, res) => {
 
     res.render("breedAdd", {
 
@@ -118,7 +169,7 @@ app.get("/breeds/add", (req, res) => {
 
 });
 
-app.post("/breeds/add", async (req, res) => {
+app.post("/breeds/add", requireAdmin, async (req, res) => {
 
     try {
 
@@ -243,7 +294,7 @@ app.get("/breeds/:id", async (req, res) => {
 // Edit Breed
 // =====================================
 
-app.get("/breeds/:id/edit", async (req, res) => {
+app.get("/breeds/:id/edit",requireAdmin, async (req, res) => {
 
     try {
 
@@ -280,7 +331,7 @@ app.get("/breeds/:id/edit", async (req, res) => {
 
 });
 
-app.post("/breeds/:id/edit", async (req, res) => {
+app.post("/breeds/:id/edit", requireAdmin, async (req, res) => {
 
     try {
 
@@ -329,7 +380,7 @@ app.post("/breeds/:id/edit", async (req, res) => {
 // Delete Breed
 // =====================================
 
-app.post("/breeds/:id/delete", async (req, res) => {
+app.post("/breeds/:id/delete", requireAdmin, async (req, res) => {
 
     try {
 
@@ -544,6 +595,83 @@ app.get("/api/health", async (req, res) => {
     }
 
 });
+// =====================================
+//login  
+// =====================================
+app.get("/login", (req, res) => {
+
+    res.render("login", {
+
+        title: "Login"
+
+    });
+
+});
+
+//=====================================
+//login post
+//=====================================
+
+app.post("/login", async (req, res) => {
+
+    try {
+
+        const { email, password } = req.body;
+
+        const user = await User.findOne({
+            where: { email }
+        });
+
+        if (!user) {
+            return res.render("login", {
+                title: "Login",
+                error: "Invalid email or password."
+            });
+        }
+
+        const validPassword = await bcrypt.compare(password, user.password);
+
+        if (!validPassword) {
+            return res.render("login", {
+                title: "Login",
+                error: "Invalid email or password."
+            });
+        }
+
+        req.session.user = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role
+        };
+
+        return res.redirect("/");
+
+    } catch (err) {
+
+        console.error("LOGIN ERROR:", err);
+
+        return res.status(500).render("error", {
+            title: "Error",
+            message: err.message
+        });
+
+    }
+
+});   
+// =====================================
+// Logout
+// =====================================
+
+app.get("/logout", (req, res) => {
+
+    req.session.destroy(() => {
+
+        res.redirect("/login");
+
+    });
+
+});
 
 // =====================================
 // 404
@@ -588,6 +716,10 @@ async function initialize() {
         await sequelize.authenticate();
 
         console.log("✅ Connected to Neon PostgreSQL");
+
+        await sequelize.sync();
+
+        console.log("✅ Database synchronized");
 
     } catch (err) {
 
