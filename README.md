@@ -44,6 +44,7 @@ Summer 2026
 - CRUD Operations
 - Security Features
 - Testing
+- Security Verification Report
 - Future Enhancements
 - Authors
 
@@ -405,14 +406,24 @@ This installs every dependency listed in `package.json`, including:
 
 ## 3. Configure environment variables
 
-Create a `.env` file:
+Copy `.env.example` to `.env` and fill in real values:
 
 ```env
+# Your Neon PostgreSQL connection string.
 DATABASE_URL=your_database_url
 
+# Required. The app calls process.exit(1) at startup if this is missing —
+# there is no built-in fallback. Generate a value with:
+#   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+# Use a DIFFERENT value locally than in production, and never commit the
+# real value to git.
 SESSION_SECRET=your_secret_key
 
 PORT=5500
+
+# development locally; Vercel sets this to "production" automatically on
+# deploy, which also makes the session cookie HTTPS-only.
+NODE_ENV=development
 
 # Optional — only needed if you want Forgot Password to actually email the
 # OTP code instead of just showing it on screen ("demo mode")
@@ -422,6 +433,11 @@ SMTP_USER=your-address@gmail.com
 SMTP_PASS=your-16-char-app-password
 SMTP_FROM=your-address@gmail.com
 ```
+
+**When deploying to Vercel**, add `DATABASE_URL` and `SESSION_SECRET` under
+Project → Settings → Environment Variables (Production) before your first
+deploy with this version of the code — the app will crash on every request
+if `SESSION_SECRET` isn't set there.
 
 ---
 
@@ -562,13 +578,21 @@ PetChoice
 │     image-4.png
 │     image-5.png
 │
+├── .env.example
 ├── migrate.js
 ├── seed.js
 ├── seedUsers.js
 ├── server.js
+├── verify-production.js
+├── vercel.json
 ├── package.json
-└── README.md
+├── README.md
+└── SECURITY_VERIFICATION.md
 ```
+
+`middleware/requireAdmin.js` and `middleware/requireLogin.js` are currently
+unused — the real auth middleware lives in `routes/auth.js`, which is what
+`server.js` imports.
 
 ---
 
@@ -672,69 +696,67 @@ Displays custom application errors — internal error details are logged server-
 
 # 🔒 Security Features
 
-✔ Helmet, with an active Content Security Policy
+| Feature | Status | Evidence |
+|---|---|---|
+| Helmet with an active, scoped Content Security Policy (not disabled) | ✅ Verified | `CSP` header present on every response — [SECURITY_VERIFICATION.md §2.2](./SECURITY_VERIFICATION.md#22-content-security-policy-header-is-present-evidence-for-fix-4) |
+| Postgres-backed sessions (`connect-pg-simple`), not `MemoryStore` | ✅ Verified | Live in the `session` table; row disappears on logout — [§2.6](./SECURITY_VERIFICATION.md#26-logout-destroys-the-session-evidence-for-fix-5--persistent-store-requirement) |
+| `SESSION_SECRET` from environment only, no hard-coded fallback | ✅ Verified | App refuses to start without it — [§2.1](./SECURITY_VERIFICATION.md#21-startup-fails-without-session_secret-evidence-for-fix-1--2) |
+| CSRF protection (session-bound token on every state-changing form) | ✅ Verified | 403 confirmed with a *valid* CSRF token on viewer-denied routes — [§2.4](./SECURITY_VERIFICATION.md#24-viewer-is-denied-on-admin-only-routes-via-direct-url-evidence-for-the-viewer-denial-requirement) |
+| Rate limiting (login, registration, OTP requests) | ✅ Implemented | `express-rate-limit` on `/login`, `/register`, `/forgot-password`, `/verify-otp` — not yet load-tested to its limit |
+| bcrypt password hashing | ✅ Verified | Login/registration only ever compare against `bcrypt.compare`; no plaintext password column |
+| Logout destroys the session (server-side, not just the cookie) | ✅ Verified | Session row confirmed deleted from Postgres, not just cookie cleared — [§2.6](./SECURITY_VERIFICATION.md#26-logout-destroys-the-session-evidence-for-fix-5--persistent-store-requirement) |
+| Role-based authorization; viewers denied add/edit/delete via direct URL | ✅ Verified | 403 on all five admin-only routes, database confirmed unchanged — [§2.4](./SECURITY_VERIFICATION.md#24-viewer-is-denied-on-admin-only-routes-via-direct-url-evidence-for-the-viewer-denial-requirement) |
+| Protected routes — breed catalog requires login | ✅ Verified | Anonymous requests to `/breeds`, `/breeds/add`, `/admin/dashboard`, `/change-password` all 302 to `/login` — [§2.3](./SECURITY_VERIFICATION.md#23-anonymous-users-are-denied-on-protected-routes) |
+| Sanitized error messages (no internals leaked to users) | ✅ Implemented | Every `catch` block logs the real error server-side and renders a generic message |
+| Secrets excluded from git | ✅ Verified | `.env` is git-ignored; `.env.example` contains placeholders only (previously leaked a real credential — since rotated, see [SECURITY_VERIFICATION.md](./SECURITY_VERIFICATION.md)) |
 
-✔ Postgres-Backed Sessions (`connect-pg-simple`, not in-memory)
-
-✔ CSRF Protection (session-bound token on every form)
-
-✔ Rate Limiting (login, registration, OTP requests)
-
-✔ bcrypt Password Hashing
-
-✔ One-Time Password (OTP) Account Recovery
-
-✔ Sanitized Error Messages (no internal details shown to users)
-
-✔ Protected Routes — Breed Catalog requires login
-
-✔ Role-Based Authorization
-
-✔ Environment Variables
-
-✔ Secure Session Cookies
-
-✔ Administrator Access Control
+Full evidence, including exact routes, HTTP methods, and status codes for
+every row above, is in **[SECURITY_VERIFICATION.md](./SECURITY_VERIFICATION.md)**.
+That document also includes `verify-production.js`, a script that runs the
+same checks against the live Vercel deployment.
 
 ---
 
 # 🧪 Testing
 
-The following have been implemented and verified during development (including live end-to-end runs against a real Postgres database — registration, login, CSRF rejection/acceptance, the full OTP password-reset flow, and admin breed CRUD):
+| Area | Status | How it was verified |
+|---|---|---|
+| CRUD operations (create/read/update/delete breeds) | ✅ Verified | Real Postgres writes confirmed by direct `SELECT` after each operation — [SECURITY_VERIFICATION.md §2.5](./SECURITY_VERIFICATION.md#25-admin-crud-works-end-to-end-against-the-real-database) |
+| PostgreSQL connection | ✅ Verified | `/api/health` + every route above hit a real database, not a mock |
+| Registration | ✅ Implemented | Manual click-through during development; not covered by `verify-production.js` |
+| Authentication (login) | ✅ Verified | 302 on valid credentials, session cookie issued — [§2.4](./SECURITY_VERIFICATION.md#24-viewer-is-denied-on-admin-only-routes-via-direct-url-evidence-for-the-viewer-denial-requirement) |
+| Authorization (admin vs. viewer) | ✅ Verified | 403 on all admin-only routes when accessed as viewer, via direct URL — [§2.4](./SECURITY_VERIFICATION.md#24-viewer-is-denied-on-admin-only-routes-via-direct-url-evidence-for-the-viewer-denial-requirement) |
+| Logout / session destruction | ✅ Verified | Session row confirmed deleted from Postgres — [§2.6](./SECURITY_VERIFICATION.md#26-logout-destroys-the-session-evidence-for-fix-5--persistent-store-requirement) |
+| Change password | ✅ Implemented | Manual click-through during development |
+| Forgot password / OTP verification | ✅ Implemented | Manual click-through during development (wrong-code rejection, correct-code acceptance, reset, re-login) |
+| Route protection | ✅ Verified | Anonymous and viewer denial both confirmed with exact status codes — see above |
+| CSRF protection | ✅ Verified | Missing/invalid token rejected with 403; valid token accepted — [§2.4](./SECURITY_VERIFICATION.md#24-viewer-is-denied-on-admin-only-routes-via-direct-url-evidence-for-the-viewer-denial-requirement) |
+| REST API (`/api/breeds`) | ✅ Implemented | Requires login (401 JSON if not); manually verified |
+| Search | ✅ Implemented | Manual click-through during development |
+| Error handling | ✅ Verified | 403/404/500 paths all render generic messages; real errors only appear in server logs |
+| **Live production deployment (Vercel)** | ⏳ **Pending — run `verify-production.js` yourselves and paste the output into `SECURITY_VERIFICATION.md §3`** | Cannot be verified from an AI sandbox (no outbound network access to the live URL) — must be run from your own machine before presenting |
 
-✔ CRUD Operations
+"✅ Verified" means it was checked with a real running server against a real
+PostgreSQL database, with the exact command/route/status code recorded in
+`SECURITY_VERIFICATION.md`. "✅ Implemented" means the code path exists and
+was exercised manually during development, but doesn't have a recorded
+route-by-route evidence trail the way the security-critical paths do.
 
-✔ PostgreSQL Connection
+**Before presenting: run `node verify-production.js` against the deployed
+Vercel URL and paste the output into `SECURITY_VERIFICATION.md`.** Everything
+above was verified against a local database with the same codebase that runs
+on Vercel — but that is not the same as testing the live deployment itself.
 
-✔ Registration
+---
 
-✔ Authentication
+# 📋 Security Verification Report
 
-✔ Authorization
-
-✔ Change Password
-
-✔ Forgot Password / OTP Verification
-
-✔ Express Session (Postgres-backed)
-
-✔ Logout
-
-✔ Route Protection
-
-✔ CSRF Protection
-
-✔ Rate Limiting
-
-✔ REST API
-
-✔ Search
-
-✔ Error Handling
-
-✔ Validation
-
-Before presenting live, do a final click-through pass yourselves on the deployed Vercel URL — automated/local verification doesn't replace testing the actual production environment.
+[SECURITY_VERIFICATION.md](./SECURITY_VERIFICATION.md) is the detailed,
+route-by-route evidence report for every claim in the Security Features and
+Testing tables above — what was fixed, exactly how each fix was tested
+(with real routes and real HTTP status codes against a real Postgres
+database), and `verify-production.js`, a script to gather the same evidence
+against the live Vercel deployment.
 
 ---
 

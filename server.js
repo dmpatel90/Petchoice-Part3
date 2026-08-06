@@ -1,5 +1,21 @@
 require("dotenv").config();
 
+// SESSION_SECRET must come from the environment only — there is no
+// hard-coded fallback. A guessable/shared default would let anyone forge
+// a valid session cookie, so a missing value fails the app at startup
+// instead of silently running with a known, insecure secret.
+if (!process.env.SESSION_SECRET) {
+
+    console.error(
+        "❌ SESSION_SECRET is not set. Add it to your .env file (local) " +
+        "or your Vercel project's Environment Variables (production) " +
+        "before starting the server. Example: SESSION_SECRET=<a long random string>"
+    );
+
+    process.exit(1);
+
+}
+
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
@@ -188,11 +204,15 @@ app.use(
             tableName: "session",
             createTableIfMissing: true
         }),
-        secret: process.env.SESSION_SECRET || "petchoice-secret-key",
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
+        name: "petchoice.sid",
         cookie: {
-            maxAge: 1000 * 60 * 60 // 1 Hour
+            maxAge: 1000 * 60 * 60, // 1 Hour
+            httpOnly: true,
+            sameSite: "lax",
+            secure: process.env.NODE_ENV === "production"
         }
     })
 );
@@ -810,7 +830,18 @@ app.post("/login", loginLimiter, async (req, res) => {
 
 app.get("/logout", (req, res) => {
 
-    req.session.destroy(() => {
+    req.session.destroy((err) => {
+
+        if (err) {
+
+            console.error("LOGOUT ERROR:", err);
+
+        }
+
+        // Belt-and-suspenders: destroy() already removes the session row
+        // from Postgres (so the old session id is dead server-side), and
+        // clearing the cookie also stops the browser from resending it.
+        res.clearCookie("petchoice.sid");
 
         res.redirect("/login");
 
